@@ -1,0 +1,59 @@
+integrator               = bd
+dt                       = 0.0005
+nsteps 			 = 100000
+
+tau-t			 = 0.05
+ref-t                    = 120.27236      ; kT = 1 kJ/mol
+tc-grps                  = system
+
+cutoff-scheme		 = group
+pbc			 = no
+ns-type                  = simple
+rlist                    = 0
+rvdw                     = 0
+rcoulomb                 = 0
+
+nstxout-compressed	 = 0
+
+freezegrps		 = H1 H2
+freezedim		 = N Y Y N Y Y
+
+pull                    = yes
+pull-nstxout		= 20
+pull-nstfout		= 0
+
+pull-ngroups		= 4
+pull-ncoords		= 2
+pull-group1-name	= H1
+pull-group2-name	= H2
+pull-group3-name	= H3
+pull-group4-name	= H4
+
+pull-coord1-groups	= 1 2
+pull-coord1-geometry	= distance
+pull-coord1-dim		= y n n
+pull-coord1-type	= external-potential
+pull-coord1-potential-provider= awh
+
+pull-coord2-groups	= 3 4
+pull-coord2-geometry	= distance
+pull-coord2-dim		= y n n
+pull-coord2-type	= external-potential
+pull-coord2-potential-provider= awh
+
+awh			= yes
+awh-nstout		= 20000
+awh1-ndim		= 2
+awh1-error-init	        = 3
+
+awh1-dim1-diffusion     = 0.1           ; tau/(m/2) = tau/1*2
+awh1-dim1-coord-index   = 1
+awh1-dim1-start         = 0.3
+awh1-dim1-end           = 1.7
+awh1-dim1-force-constant= 8000
+
+awh1-dim2-diffusion     = 0.1           ; tau/(m/2) = tau/1*2
+awh1-dim2-coord-index   = 2
+awh1-dim2-start         = 0.3
+awh1-dim2-end           = 1.7
+awh1-dim2-force-constant= 8000
