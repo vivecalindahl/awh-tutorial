@@ -1,0 +1,1712 @@
+Log file opened on Tue Apr 17 12:39:35 2018
+Host: sanddollar.local  pid: 11097  rank ID: 0  number of ranks:  1
+       :-) GROMACS - gmx mdrun, 2018.2-dev-20180410-f2c9e7785-unknown (-:
+
+                            GROMACS is written by:
+     Emile Apol      Rossen Apostolov      Paul Bauer     Herman J.C. Berendsen
+    Par Bjelkmar    Aldert van Buuren   Rudi van Drunen     Anton Feenstra  
+  Gerrit Groenhof    Aleksei Iupinov   Christoph Junghans   Anca Hamuraru   
+ Vincent Hindriksen Dimitrios Karkoulis    Peter Kasson        Jiri Kraus    
+  Carsten Kutzner      Per Larsson      Justin A. Lemkul    Viveca Lindahl  
+  Magnus Lundborg   Pieter Meulenhoff    Erik Marklund      Teemu Murtola   
+    Szilard Pall       Sander Pronk      Roland Schulz     Alexey Shvetsov  
+   Michael Shirts     Alfons Sijbers     Peter Tieleman    Teemu Virolainen 
+ Christian Wennberg    Maarten Wolf   
+                           and the project leaders:
+        Mark Abraham, Berk Hess, Erik Lindahl, and David van der Spoel
+
+Copyright (c) 1991-2000, University of Groningen, The Netherlands.
+Copyright (c) 2001-2017, The GROMACS development team at
+Uppsala University, Stockholm University and
+the Royal Institute of Technology, Sweden.
+check out http://www.gromacs.org for more information.
+
+GROMACS is free software; you can redistribute it and/or modify it
+under the terms of the GNU Lesser General Public License
+as published by the Free Software Foundation; either version 2.1
+of the License, or (at your option) any later version.
+
+GROMACS:      gmx mdrun, version 2018.2-dev-20180410-f2c9e7785-unknown
+Executable:   /Users/viveca/programs/gromacs/2018/bin/gmx
+Data prefix:  /Users/viveca/programs/gromacs/2018
+Working dir:  /Users/viveca/presentations/awh-tutorial/0-simple/data
+Command line:
+  gmx mdrun -v -quiet -s ../topol.tpr -tableb ../table_b0.xvg
+
+GROMACS version:    2018.2-dev-20180410-f2c9e7785-unknown
+GIT SHA1 hash:      f2c9e7785cf77a6b6ede7a39654578185f4b285b
+Branched from:      unknown
+Precision:          single
+Memory model:       64 bit
+MPI library:        thread_mpi
+OpenMP support:     disabled
+GPU support:        disabled
+SIMD instructions:  AVX_256
+FFT library:        fftw-3.3.5-sse2
+RDTSCP usage:       enabled
+TNG support:        enabled
+Hwloc support:      hwloc-1.11.0
+Tracing support:    disabled
+Built on:           2018-04-16 20:31:04
+Built by:           viveca@sanddollar.local [CMAKE]
+Build OS/arch:      Darwin 16.7.0 x86_64
+Build CPU vendor:   Intel
+Build CPU brand:    Intel(R) Core(TM) i5-3427U CPU @ 1.80GHz
+Build CPU family:   6   Model: 58   Stepping: 9
+Build CPU features: aes apic avx clfsh cmov cx8 cx16 f16c htt intel lahf mmx msr nonstop_tsc pcid pclmuldq pdcm popcnt pse rdrnd rdtscp sse2 sse3 sse4.1 sse4.2 ssse3 tdt x2apic
+C compiler:         /opt/local/bin/mpicc-openmpi-mp AppleClang 8.1.0.8020042
+C compiler flags:    -mavx    -Wall -Wno-unused -Wunused-value -Wunused-parameter -Wno-unknown-pragmas  -O3 -DNDEBUG  
+C++ compiler:       /opt/local/bin/mpicxx-openmpi-mp AppleClang 8.1.0.8020042
+C++ compiler flags:  -mavx    -std=c++11  -Wdeprecated -Wextra -Wno-missing-field-initializers -Wpointer-arith -Wmissing-prototypes -Wall -Wno-unknown-pragmas  -O3 -DNDEBUG  
+
+
+Running on 1 node with total 4 cores, 4 logical cores
+Hardware detected:
+  CPU info:
+    Vendor: Intel
+    Brand:  Intel(R) Core(TM) i5-3427U CPU @ 1.80GHz
+    Family: 6   Model: 58   Stepping: 9
+    Features: aes apic avx clfsh cmov cx8 cx16 f16c htt intel lahf mmx msr nonstop_tsc pcid pclmuldq pdcm popcnt pse rdrnd rdtscp sse2 sse3 sse4.1 sse4.2 ssse3 tdt x2apic
+  Hardware topology: Only logical processor count
+
+
+++++ PLEASE READ AND CITE THE FOLLOWING REFERENCE ++++
+M. J. Abraham, T. Murtola, R. Schulz, S. Páll, J. C. Smith, B. Hess, E.
+Lindahl
+GROMACS: High performance molecular simulations through multi-level
+parallelism from laptops to supercomputers
+SoftwareX 1 (2015) pp. 19-25
+-------- -------- --- Thank You --- -------- --------
+
+
+++++ PLEASE READ AND CITE THE FOLLOWING REFERENCE ++++
+S. Páll, M. J. Abraham, C. Kutzner, B. Hess, E. Lindahl
+Tackling Exascale Software Challenges in Molecular Dynamics Simulations with
+GROMACS
+In S. Markidis & E. Laure (Eds.), Solving Software Challenges for Exascale 8759 (2015) pp. 3-27
+-------- -------- --- Thank You --- -------- --------
+
+
+++++ PLEASE READ AND CITE THE FOLLOWING REFERENCE ++++
+S. Pronk, S. Páll, R. Schulz, P. Larsson, P. Bjelkmar, R. Apostolov, M. R.
+Shirts, J. C. Smith, P. M. Kasson, D. van der Spoel, B. Hess, and E. Lindahl
+GROMACS 4.5: a high-throughput and highly parallel open source molecular
+simulation toolkit
+Bioinformatics 29 (2013) pp. 845-54
+-------- -------- --- Thank You --- -------- --------
+
+
+++++ PLEASE READ AND CITE THE FOLLOWING REFERENCE ++++
+B. Hess and C. Kutzner and D. van der Spoel and E. Lindahl
+GROMACS 4: Algorithms for highly efficient, load-balanced, and scalable
+molecular simulation
+J. Chem. Theory Comput. 4 (2008) pp. 435-447
+-------- -------- --- Thank You --- -------- --------
+
+
+++++ PLEASE READ AND CITE THE FOLLOWING REFERENCE ++++
+D. van der Spoel, E. Lindahl, B. Hess, G. Groenhof, A. E. Mark and H. J. C.
+Berendsen
+GROMACS: Fast, Flexible and Free
+J. Comp. Chem. 26 (2005) pp. 1701-1719
+-------- -------- --- Thank You --- -------- --------
+
+
+++++ PLEASE READ AND CITE THE FOLLOWING REFERENCE ++++
+E. Lindahl and B. Hess and D. van der Spoel
+GROMACS 3.0: A package for molecular simulation and trajectory analysis
+J. Mol. Mod. 7 (2001) pp. 306-317
+-------- -------- --- Thank You --- -------- --------
+
+
+++++ PLEASE READ AND CITE THE FOLLOWING REFERENCE ++++
+H. J. C. Berendsen, D. van der Spoel and R. van Drunen
+GROMACS: A message-passing parallel molecular dynamics implementation
+Comp. Phys. Comm. 91 (1995) pp. 43-56
+-------- -------- --- Thank You --- -------- --------
+
+Input Parameters:
+   integrator                     = bd
+   tinit                          = 0
+   dt                             = 0.0005
+   nsteps                         = 100000
+   init-step                      = 0
+   simulation-part                = 1
+   comm-mode                      = Linear
+   nstcomm                        = 100
+   bd-fric                        = 0
+   ld-seed                        = -403212610
+   emtol                          = 10
+   emstep                         = 0.01
+   niter                          = 20
+   fcstep                         = 0
+   nstcgsteep                     = 1000
+   nbfgscorr                      = 10
+   rtpi                           = 0.05
+   nstxout                        = 0
+   nstvout                        = 0
+   nstfout                        = 0
+   nstlog                         = 1000
+   nstcalcenergy                  = 100
+   nstenergy                      = 1000
+   nstxout-compressed             = 0
+   compressed-x-precision         = 1000
+   cutoff-scheme                  = Group
+   nstlist                        = 10
+   ns-type                        = Simple
+   pbc                            = no
+   periodic-molecules             = false
+   verlet-buffer-tolerance        = 0.005
+   rlist                          = 0
+   coulombtype                    = Cut-off
+   coulomb-modifier               = None
+   rcoulomb-switch                = 0
+   rcoulomb                       = 0
+   epsilon-r                      = 1
+   epsilon-rf                     = inf
+   vdw-type                       = Cut-off
+   vdw-modifier                   = None
+   rvdw-switch                    = 0
+   rvdw                           = 0
+   DispCorr                       = No
+   table-extension                = 1
+   fourierspacing                 = 0.12
+   fourier-nx                     = 0
+   fourier-ny                     = 0
+   fourier-nz                     = 0
+   pme-order                      = 4
+   ewald-rtol                     = 1e-05
+   ewald-rtol-lj                  = 0.001
+   lj-pme-comb-rule               = Geometric
+   ewald-geometry                 = 0
+   epsilon-surface                = 0
+   implicit-solvent               = No
+   gb-algorithm                   = Still
+   nstgbradii                     = 1
+   rgbradii                       = 1
+   gb-epsilon-solvent             = 80
+   gb-saltconc                    = 0
+   gb-obc-alpha                   = 1
+   gb-obc-beta                    = 0.8
+   gb-obc-gamma                   = 4.85
+   gb-dielectric-offset           = 0.009
+   sa-algorithm                   = Ace-approximation
+   sa-surface-tension             = 2.05016
+   tcoupl                         = No
+   nsttcouple                     = -1
+   nh-chain-length                = 0
+   print-nose-hoover-chain-variables = false
+   pcoupl                         = No
+   pcoupltype                     = Isotropic
+   nstpcouple                     = -1
+   tau-p                          = 1
+   compressibility (3x3):
+      compressibility[    0]={ 0.00000e+00,  0.00000e+00,  0.00000e+00}
+      compressibility[    1]={ 0.00000e+00,  0.00000e+00,  0.00000e+00}
+      compressibility[    2]={ 0.00000e+00,  0.00000e+00,  0.00000e+00}
+   ref-p (3x3):
+      ref-p[    0]={ 0.00000e+00,  0.00000e+00,  0.00000e+00}
+      ref-p[    1]={ 0.00000e+00,  0.00000e+00,  0.00000e+00}
+      ref-p[    2]={ 0.00000e+00,  0.00000e+00,  0.00000e+00}
+   refcoord-scaling               = No
+   posres-com (3):
+      posres-com[0]= 0.00000e+00
+      posres-com[1]= 0.00000e+00
+      posres-com[2]= 0.00000e+00
+   posres-comB (3):
+      posres-comB[0]= 0.00000e+00
+      posres-comB[1]= 0.00000e+00
+      posres-comB[2]= 0.00000e+00
+   QMMM                           = false
+   QMconstraints                  = 0
+   QMMMscheme                     = 0
+   MMChargeScaleFactor            = 1
+qm-opts:
+   ngQM                           = 0
+   constraint-algorithm           = Lincs
+   continuation                   = false
+   Shake-SOR                      = false
+   shake-tol                      = 0.0001
+   lincs-order                    = 4
+   lincs-iter                     = 1
+   lincs-warnangle                = 30
+   nwall                          = 0
+   wall-type                      = 9-3
+   wall-r-linpot                  = -1
+   wall-atomtype[0]               = -1
+   wall-atomtype[1]               = -1
+   wall-density[0]                = 0
+   wall-density[1]                = 0
+   wall-ewald-zfac                = 3
+   pull                           = true
+   pull-cylinder-r                = 1.5
+   pull-constr-tol                = 1e-06
+   pull-print-COM                 = false
+   pull-print-ref-value           = false
+   pull-print-components          = false
+   pull-nstxout                   = 20
+   pull-nstfout                   = 0
+   pull-ngroups                   = 3
+   pull-group 0:
+     atom: not available
+     weight: not available
+     pbcatom                        = -1
+   pull-group 1:
+     atom (1):
+        atom[0]=0
+     weight: not available
+     pbcatom                        = -1
+   pull-group 2:
+     atom (1):
+        atom[0]=1
+     weight: not available
+     pbcatom                        = -1
+   pull-ncoords                   = 1
+   pull-coord 0:
+   type                           = external-potential
+   potential-provider             = awh
+   geometry                       = distance
+   group[0]                       = 1
+   group[1]                       = 2
+   dim (3):
+      dim[0]=1
+      dim[1]=0
+      dim[2]=0
+   origin (3):
+      origin[0]= 0.00000e+00
+      origin[1]= 0.00000e+00
+      origin[2]= 0.00000e+00
+   vec (3):
+      vec[0]= 0.00000e+00
+      vec[1]= 0.00000e+00
+      vec[2]= 0.00000e+00
+   start                          = false
+   init                           = 0
+   rate                           = 0
+   k                              = 0
+   kB                             = 0
+   awh                            = true
+   awh-potential                  = convolved
+   awh-seed                       = 1313735221
+   awh-nstout                     = 20000
+   awh-nstsample                  = 10
+   awh-nsamples-update            = 10
+   awh-share-bias-multisim        = false
+   awh-nbias                      = 1
+   awh1-error-init                = 3
+   awh1-growth                    = exp-linear
+   awh1-target                    = constant
+   awh1-target-beta-scalng        = 0
+   awh1-target-cutoff             = 0
+   awh1-user-data                 = false
+   awh1-share-group               = 0
+   awh1-equilibrate-histogram     = false
+   awh1-ndim                      = 1
+   awh1-dim1:
+    coord-provider                 = pull
+    coord-index                    = 1
+    start                          = 0.3
+    end                            = 1.7
+    period                         = 0
+    force-constant                 = 8000
+    diffusion                      = 0.1
+    start                          = 0.3
+    end                            = 1.7
+    cover-diameter                 = 0
+   rotation                       = false
+   interactiveMD                  = false
+   disre                          = No
+   disre-weighting                = Conservative
+   disre-mixed                    = false
+   dr-fc                          = 1000
+   dr-tau                         = 0
+   nstdisreout                    = 100
+   orire-fc                       = 0
+   orire-tau                      = 0
+   nstorireout                    = 100
+   free-energy                    = no
+   cos-acceleration               = 0
+   deform (3x3):
+      deform[    0]={ 0.00000e+00,  0.00000e+00,  0.00000e+00}
+      deform[    1]={ 0.00000e+00,  0.00000e+00,  0.00000e+00}
+      deform[    2]={ 0.00000e+00,  0.00000e+00,  0.00000e+00}
+   simulated-tempering            = false
+   swapcoords                     = no
+   userint1                       = 0
+   userint2                       = 0
+   userint3                       = 0
+   userint4                       = 0
+   userreal1                      = 0
+   userreal2                      = 0
+   userreal3                      = 0
+   userreal4                      = 0
+   applied-forces:
+     electric-field:
+       x:
+         E0                       = 0
+         omega                    = 0
+         t0                       = 0
+         sigma                    = 0
+       y:
+         E0                       = 0
+         omega                    = 0
+         t0                       = 0
+         sigma                    = 0
+       z:
+         E0                       = 0
+         omega                    = 0
+         t0                       = 0
+         sigma                    = 0
+grpopts:
+   nrdf:           1
+   ref-t:     120.272
+   tau-t:        0.05
+annealing:          No
+annealing-npoints:           0
+   acc:	           0           0           0
+   nfreeze:           N           Y           Y           N           Y           Y
+   energygrp-flags[  0]: 0
+
+
+Using SIMD all-vs-all kernels.
+
+Using 1 MPI thread
+
+Your simulation settings would have triggered the efficient all-vs-all
+kernels in GROMACS 4.5, but these have not been implemented in GROMACS
+4.6 and 5.x. If performance is important, please use GROMACS 4.5.7
+or try cutoff-scheme = Verlet.
+
+
+NOTE: This file uses the deprecated 'group' cutoff_scheme. This will be
+removed in a future release when 'verlet' supports all interaction forms.
+
+System total charge: 0.000
+Potential shift: LJ r^-12: 0.000e+00 r^-6: 0.000e+00, Coulomb -0e+00
+Table routines are used for coulomb: false
+Table routines are used for vdw:     false
+Cut-off's:   NS: 1e+18   Coulomb: 1e+18   LJ: 1e+18
+Read user tables from ../table_b0.xvg with 201 data points.
+Tabscale = 100 points/nm
+
+
+Will apply potential COM pulling
+with 1 pull coordinate and 2 groups
+Pull group 1:     1 atoms, mass     0.010, weighted mass     0.010
+Pull group 2:     1 atoms, mass     0.010, weighted mass     0.010
+Intra-simulation communication will occur every 10 steps.
+Center of mass motion removal mode is Linear
+We have the following groups for center of mass motion removal:
+  0:  rest
+There are: 2 Atoms
+
+++++ PLEASE READ AND CITE THE FOLLOWING REFERENCE ++++
+V. Lindahl, J. Lidmar, B. Hess
+Accelerated weight histogram method for exploring free energy landscapes
+J. Chem. Phys. 141 (2014) pp. 044110
+-------- -------- --- Thank You --- -------- --------
+
+
+awh1: initial force correlation block length = 0.005 ps
+awh1: force correlation number of blocks = 64
+Started mdrun on rank 0 Tue Apr 17 12:39:35 2018
+           Step           Time
+              0        0.00000
+
+
+   Energies (kJ/mol)
+     Tab. Bonds        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+    0.00000e+00    0.00000e+00    0.00000e+00    3.91904e+00    3.91904e+00
+    Kinetic En.   Total Energy    Temperature Pressure (bar)
+    4.53583e-01    4.37262e+00    1.09107e+02    0.00000e+00
+
+           Step           Time
+           1000        0.50000
+
+   Energies (kJ/mol)
+     Tab. Bonds        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+   -4.46538e+00    0.00000e+00    0.00000e+00   -2.68199e+00   -7.14736e+00
+    Kinetic En.   Total Energy    Temperature Pressure (bar)
+    3.77543e-01   -6.76982e+00    9.08159e+01    0.00000e+00
+
+Large VCM(group rest):    -14.16301,      0.00000,      0.00000, Temp-cm:  2.00591e+00
+Large VCM(group rest):    -10.15490,      0.00000,      0.00000, Temp-cm:  1.03122e+00
+Large VCM(group rest):     12.28847,      0.00000,      0.00000, Temp-cm:  1.51007e+00
+Large VCM(group rest):    -11.03548,      0.00000,      0.00000, Temp-cm:  1.21782e+00
+           Step           Time
+           2000        1.00000
+
+Large VCM(group rest):     16.22194,      0.00000,      0.00000, Temp-cm:  2.63151e+00
+   Energies (kJ/mol)
+     Tab. Bonds        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+   -9.69089e+00    0.00000e+00    0.00000e+00   -4.81259e+00   -1.45035e+01
+    Kinetic En.   Total Energy    Temperature Pressure (bar)
+    1.20988e+00   -1.32936e+01    2.91031e+02    0.00000e+00
+
+Large VCM(group rest):    -20.07770,      0.00000,      0.00000, Temp-cm:  4.03114e+00
+Large VCM(group rest):     17.98243,      0.00000,      0.00000, Temp-cm:  3.23368e+00
+           Step           Time
+           3000        1.50000
+
+   Energies (kJ/mol)
+     Tab. Bonds        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+   -6.62705e+00    0.00000e+00    0.00000e+00   -1.41628e+01   -2.07898e+01
+    Kinetic En.   Total Energy    Temperature Pressure (bar)
+    8.05110e-01   -1.99847e+01    1.93665e+02    0.00000e+00
+
+Large VCM(group rest):    -12.83907,      0.00000,      0.00000, Temp-cm:  1.64842e+00
+           Step           Time
+           4000        2.00000
+
+   Energies (kJ/mol)
+     Tab. Bonds        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+   -9.47683e+00    0.00000e+00    0.00000e+00   -2.27311e+01   -3.22080e+01
+    Kinetic En.   Total Energy    Temperature Pressure (bar)
+    2.86740e-01   -3.19212e+01    6.89739e+01    0.00000e+00
+
+Large VCM(group rest):    -10.85344,      0.00000,      0.00000, Temp-cm:  1.17797e+00
+Large VCM(group rest):     11.68389,      0.00000,      0.00000, Temp-cm:  1.36513e+00
+Large VCM(group rest):     19.40169,      0.00000,      0.00000, Temp-cm:  3.76425e+00
+Large VCM(group rest):     10.29366,      0.00000,      0.00000, Temp-cm:  1.05960e+00
+Large VCM(group rest):     20.78193,      0.00000,      0.00000, Temp-cm:  4.31888e+00
+Large VCM(group rest):     20.35081,      0.00000,      0.00000, Temp-cm:  4.14156e+00
+           Step           Time
+           5000        2.50000
+
+   Energies (kJ/mol)
+     Tab. Bonds        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+   -8.60293e+00    0.00000e+00    0.00000e+00   -2.95497e+01   -3.81526e+01
+    Kinetic En.   Total Energy    Temperature Pressure (bar)
+    3.01263e-01   -3.78514e+01    7.24673e+01    0.00000e+00
+
+Large VCM(group rest):     10.46525,      0.00000,      0.00000, Temp-cm:  1.09522e+00
+Large VCM(group rest):    -14.66517,      0.00000,      0.00000, Temp-cm:  2.15067e+00
+           Step           Time
+           6000        3.00000
+
+   Energies (kJ/mol)
+     Tab. Bonds        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+   -1.76912e+00    0.00000e+00    0.00000e+00   -5.06713e+01   -5.24405e+01
+    Kinetic En.   Total Energy    Temperature Pressure (bar)
+    7.06775e-01   -5.17337e+01    1.70011e+02    0.00000e+00
+
+Large VCM(group rest):     23.44608,      0.00000,      0.00000, Temp-cm:  5.49719e+00
+Large VCM(group rest):     14.59148,      0.00000,      0.00000, Temp-cm:  2.12911e+00
+Large VCM(group rest):     15.26002,      0.00000,      0.00000, Temp-cm:  2.32868e+00
+Large VCM(group rest):    -13.76477,      0.00000,      0.00000, Temp-cm:  1.89469e+00
+           Step           Time
+           7000        3.50000
+
+   Energies (kJ/mol)
+     Tab. Bonds        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+   -9.99924e+00    0.00000e+00    0.00000e+00   -5.41843e+01   -6.41835e+01
+    Kinetic En.   Total Energy    Temperature Pressure (bar)
+    6.45359e-01   -6.35382e+01    1.55238e+02    0.00000e+00
+
+Large VCM(group rest):     13.91838,      0.00000,      0.00000, Temp-cm:  1.93721e+00
+Large VCM(group rest):     14.11644,      0.00000,      0.00000, Temp-cm:  1.99274e+00
+           Step           Time
+           8000        4.00000
+
+   Energies (kJ/mol)
+     Tab. Bonds        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+   -7.48599e+00    0.00000e+00    0.00000e+00   -6.23957e+01   -6.98817e+01
+    Kinetic En.   Total Energy    Temperature Pressure (bar)
+    9.42805e-01   -6.89389e+01    2.26787e+02    0.00000e+00
+
+Large VCM(group rest):    -10.83493,      0.00000,      0.00000, Temp-cm:  1.17396e+00
+Large VCM(group rest):    -19.44581,      0.00000,      0.00000, Temp-cm:  3.78140e+00
+Large VCM(group rest):    -12.38479,      0.00000,      0.00000, Temp-cm:  1.53383e+00
+           Step           Time
+           9000        4.50000
+
+   Energies (kJ/mol)
+     Tab. Bonds        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+   -7.27995e+00    0.00000e+00    0.00000e+00   -6.93611e+01   -7.66411e+01
+    Kinetic En.   Total Energy    Temperature Pressure (bar)
+    6.94323e-01   -7.59468e+01    1.67016e+02    0.00000e+00
+
+
+awh1: covering at t = 4.55 ps. Decreased the update size.
+Large VCM(group rest):     10.80585,      0.00000,      0.00000, Temp-cm:  1.16766e+00
+Large VCM(group rest):     10.51763,      0.00000,      0.00000, Temp-cm:  1.10621e+00
+           Step           Time
+          10000        5.00000
+
+   Energies (kJ/mol)
+     Tab. Bonds        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+   -7.20820e+00    0.00000e+00    0.00000e+00   -7.41169e+01   -8.13251e+01
+    Kinetic En.   Total Energy    Temperature Pressure (bar)
+    2.66789e-01   -8.10583e+01    6.41747e+01    0.00000e+00
+
+Large VCM(group rest):    -23.52011,      0.00000,      0.00000, Temp-cm:  5.53195e+00
+Large VCM(group rest):    -10.34422,      0.00000,      0.00000, Temp-cm:  1.07003e+00
+Large VCM(group rest):     27.48652,      0.00000,      0.00000, Temp-cm:  7.55509e+00
+Large VCM(group rest):     16.52628,      0.00000,      0.00000, Temp-cm:  2.73118e+00
+           Step           Time
+          11000        5.50000
+
+Large VCM(group rest):     19.97688,      0.00000,      0.00000, Temp-cm:  3.99076e+00
+   Energies (kJ/mol)
+     Tab. Bonds        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+   -9.86070e+00    0.00000e+00    0.00000e+00   -7.53375e+01   -8.51982e+01
+    Kinetic En.   Total Energy    Temperature Pressure (bar)
+    1.52077e+00   -8.36775e+01    3.65813e+02    0.00000e+00
+
+Large VCM(group rest):    -25.96878,      0.00000,      0.00000, Temp-cm:  6.74378e+00
+Large VCM(group rest):    -20.64486,      0.00000,      0.00000, Temp-cm:  4.26210e+00
+Large VCM(group rest):     19.20774,      0.00000,      0.00000, Temp-cm:  3.68937e+00
+           Step           Time
+          12000        6.00000
+
+   Energies (kJ/mol)
+     Tab. Bonds        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+   -9.99749e+00    0.00000e+00    0.00000e+00   -7.89998e+01   -8.89973e+01
+    Kinetic En.   Total Energy    Temperature Pressure (bar)
+    2.01890e+00   -8.69784e+01    4.85636e+02    0.00000e+00
+
+Large VCM(group rest):     10.83440,      0.00000,      0.00000, Temp-cm:  1.17384e+00
+Large VCM(group rest):    -11.18530,      0.00000,      0.00000, Temp-cm:  1.25111e+00
+           Step           Time
+          13000        6.50000
+
+   Energies (kJ/mol)
+     Tab. Bonds        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+   -7.24885e+00    0.00000e+00    0.00000e+00   -8.49349e+01   -9.21838e+01
+    Kinetic En.   Total Energy    Temperature Pressure (bar)
+    4.65011e-01   -9.17188e+01    1.11856e+02    0.00000e+00
+
+           Step           Time
+          14000        7.00000
+
+   Energies (kJ/mol)
+     Tab. Bonds        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+   -2.68906e-01    0.00000e+00    0.00000e+00   -9.81228e+01   -9.83918e+01
+    Kinetic En.   Total Energy    Temperature Pressure (bar)
+    1.62589e+00   -9.67659e+01    3.91100e+02    0.00000e+00
+
+Large VCM(group rest):     12.52648,      0.00000,      0.00000, Temp-cm:  1.56913e+00
+Large VCM(group rest):     21.86726,      0.00000,      0.00000, Temp-cm:  4.78177e+00
+Large VCM(group rest):     10.48116,      0.00000,      0.00000, Temp-cm:  1.09855e+00
+           Step           Time
+          15000        7.50000
+
+Large VCM(group rest):     11.51492,      0.00000,      0.00000, Temp-cm:  1.32593e+00
+   Energies (kJ/mol)
+     Tab. Bonds        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+   -2.52963e+00    0.00000e+00    0.00000e+00   -9.90486e+01   -1.01578e+02
+    Kinetic En.   Total Energy    Temperature Pressure (bar)
+    7.67276e-01   -1.00811e+02    1.84564e+02    0.00000e+00
+
+Large VCM(group rest):    -10.11354,      0.00000,      0.00000, Temp-cm:  1.02284e+00
+Large VCM(group rest):    -16.12332,      0.00000,      0.00000, Temp-cm:  2.59961e+00
+           Step           Time
+          16000        8.00000
+
+   Energies (kJ/mol)
+     Tab. Bonds        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+   -8.80440e+00    0.00000e+00    0.00000e+00   -9.46777e+01   -1.03482e+02
+    Kinetic En.   Total Energy    Temperature Pressure (bar)
+    1.77920e+00   -1.01703e+02    4.27977e+02    0.00000e+00
+
+Large VCM(group rest):     10.07407,      0.00000,      0.00000, Temp-cm:  1.01487e+00
+Large VCM(group rest):     13.99589,      0.00000,      0.00000, Temp-cm:  1.95885e+00
+           Step           Time
+          17000        8.50000
+
+Large VCM(group rest):     18.02568,      0.00000,      0.00000, Temp-cm:  3.24925e+00
+   Energies (kJ/mol)
+     Tab. Bonds        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+   -1.70349e+00    0.00000e+00    0.00000e+00   -1.08267e+02   -1.09970e+02
+    Kinetic En.   Total Energy    Temperature Pressure (bar)
+    1.92706e+00   -1.08043e+02    4.63545e+02    0.00000e+00
+
+Large VCM(group rest):     14.12286,      0.00000,      0.00000, Temp-cm:  1.99455e+00
+           Step           Time
+          18000        9.00000
+
+Large VCM(group rest):     22.37495,      0.00000,      0.00000, Temp-cm:  5.00638e+00
+   Energies (kJ/mol)
+     Tab. Bonds        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+   -4.71072e+00    0.00000e+00    0.00000e+00   -1.08636e+02   -1.13347e+02
+    Kinetic En.   Total Energy    Temperature Pressure (bar)
+    1.76378e+00   -1.11583e+02    4.24268e+02    0.00000e+00
+
+Large VCM(group rest):     12.00122,      0.00000,      0.00000, Temp-cm:  1.44029e+00
+Large VCM(group rest):     20.15044,      0.00000,      0.00000, Temp-cm:  4.06040e+00
+Large VCM(group rest):     27.59177,      0.00000,      0.00000, Temp-cm:  7.61306e+00
+Large VCM(group rest):    -10.90442,      0.00000,      0.00000, Temp-cm:  1.18906e+00
+Large VCM(group rest):     10.03059,      0.00000,      0.00000, Temp-cm:  1.00613e+00
+           Step           Time
+          19000        9.50000
+
+   Energies (kJ/mol)
+     Tab. Bonds        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+   -1.67108e+00    0.00000e+00    0.00000e+00   -1.15818e+02   -1.17489e+02
+    Kinetic En.   Total Energy    Temperature Pressure (bar)
+    7.79607e-01   -1.16709e+02    1.87530e+02    0.00000e+00
+
+Large VCM(group rest):     22.80248,      0.00000,      0.00000, Temp-cm:  5.19953e+00
+Large VCM(group rest):    -11.15204,      0.00000,      0.00000, Temp-cm:  1.24368e+00
+Large VCM(group rest):     13.59757,      0.00000,      0.00000, Temp-cm:  1.84894e+00
+           Step           Time
+          20000       10.00000
+
+   Energies (kJ/mol)
+     Tab. Bonds        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+   -9.93826e+00    0.00000e+00    0.00000e+00   -1.11223e+02   -1.21162e+02
+    Kinetic En.   Total Energy    Temperature Pressure (bar)
+    1.23603e+00   -1.19926e+02    2.97321e+02    0.00000e+00
+
+Large VCM(group rest):    -13.54565,      0.00000,      0.00000, Temp-cm:  1.83485e+00
+Large VCM(group rest):    -16.25559,      0.00000,      0.00000, Temp-cm:  2.64244e+00
+           Step           Time
+          21000       10.50000
+
+Large VCM(group rest):     11.12277,      0.00000,      0.00000, Temp-cm:  1.23716e+00
+   Energies (kJ/mol)
+     Tab. Bonds        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+   -9.44101e+00    0.00000e+00    0.00000e+00   -1.14343e+02   -1.23784e+02
+    Kinetic En.   Total Energy    Temperature Pressure (bar)
+    1.15998e+00   -1.22624e+02    2.79028e+02    0.00000e+00
+
+Large VCM(group rest):     12.50508,      0.00000,      0.00000, Temp-cm:  1.56377e+00
+Large VCM(group rest):     19.09879,      0.00000,      0.00000, Temp-cm:  3.64764e+00
+Large VCM(group rest):    -13.56326,      0.00000,      0.00000, Temp-cm:  1.83962e+00
+Large VCM(group rest):    -19.97099,      0.00000,      0.00000, Temp-cm:  3.98841e+00
+           Step           Time
+          22000       11.00000
+
+Large VCM(group rest):    -17.57805,      0.00000,      0.00000, Temp-cm:  3.08988e+00
+   Energies (kJ/mol)
+     Tab. Bonds        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+   -9.99564e+00    0.00000e+00    0.00000e+00   -1.15943e+02   -1.25938e+02
+    Kinetic En.   Total Energy    Temperature Pressure (bar)
+    1.03806e+00   -1.24900e+02    2.49701e+02    0.00000e+00
+
+           Step           Time
+          23000       11.50000
+
+Large VCM(group rest):    -20.19361,      0.00000,      0.00000, Temp-cm:  4.07782e+00
+   Energies (kJ/mol)
+     Tab. Bonds        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+   -3.36199e-01    0.00000e+00    0.00000e+00   -1.29541e+02   -1.29877e+02
+    Kinetic En.   Total Energy    Temperature Pressure (bar)
+    1.03408e+00   -1.28843e+02    2.48744e+02    0.00000e+00
+
+
+awh1: covering at t = 11.7 ps. Decreased the update size.
+Large VCM(group rest):     13.04699,      0.00000,      0.00000, Temp-cm:  1.70224e+00
+           Step           Time
+          24000       12.00000
+
+   Energies (kJ/mol)
+     Tab. Bonds        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+   -4.04072e+00    0.00000e+00    0.00000e+00   -1.31522e+02   -1.35563e+02
+    Kinetic En.   Total Energy    Temperature Pressure (bar)
+    6.65537e-01   -1.34897e+02    1.60091e+02    0.00000e+00
+
+Large VCM(group rest):    -12.73826,      0.00000,      0.00000, Temp-cm:  1.62263e+00
+Large VCM(group rest):     11.76015,      0.00000,      0.00000, Temp-cm:  1.38301e+00
+           Step           Time
+          25000       12.50000
+
+   Energies (kJ/mol)
+     Tab. Bonds        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+   -7.55201e+00    0.00000e+00    0.00000e+00   -1.27270e+02   -1.34822e+02
+    Kinetic En.   Total Energy    Temperature Pressure (bar)
+    3.41601e-01   -1.34481e+02    8.21702e+01    0.00000e+00
+
+Large VCM(group rest):     11.64263,      0.00000,      0.00000, Temp-cm:  1.35551e+00
+           Step           Time
+          26000       13.00000
+
+   Energies (kJ/mol)
+     Tab. Bonds        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+   -1.40027e+00    0.00000e+00    0.00000e+00   -1.36127e+02   -1.37527e+02
+    Kinetic En.   Total Energy    Temperature Pressure (bar)
+    5.32533e-01   -1.36995e+02    1.28098e+02    0.00000e+00
+
+Large VCM(group rest):     20.78288,      0.00000,      0.00000, Temp-cm:  4.31928e+00
+Large VCM(group rest):    -13.28443,      0.00000,      0.00000, Temp-cm:  1.76476e+00
+           Step           Time
+          27000       13.50000
+
+Large VCM(group rest):     14.87478,      0.00000,      0.00000, Temp-cm:  2.21259e+00
+   Energies (kJ/mol)
+     Tab. Bonds        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+   -6.87889e+00    0.00000e+00    0.00000e+00   -1.31839e+02   -1.38717e+02
+    Kinetic En.   Total Energy    Temperature Pressure (bar)
+    2.45932e+00   -1.36258e+02    5.91577e+02    0.00000e+00
+
+Large VCM(group rest):    -19.42121,      0.00000,      0.00000, Temp-cm:  3.77184e+00
+           Step           Time
+          28000       14.00000
+
+   Energies (kJ/mol)
+     Tab. Bonds        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+   -9.11308e+00    0.00000e+00    0.00000e+00   -1.30321e+02   -1.39434e+02
+    Kinetic En.   Total Energy    Temperature Pressure (bar)
+    5.06007e-01   -1.38928e+02    1.21717e+02    0.00000e+00
+
+Large VCM(group rest):     16.14389,      0.00000,      0.00000, Temp-cm:  2.60625e+00
+Large VCM(group rest):     11.56477,      0.00000,      0.00000, Temp-cm:  1.33744e+00
+Large VCM(group rest):     12.40931,      0.00000,      0.00000, Temp-cm:  1.53991e+00
+           Step           Time
+          29000       14.50000
+
+   Energies (kJ/mol)
+     Tab. Bonds        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+   -2.27146e-01    0.00000e+00    0.00000e+00   -1.41046e+02   -1.41273e+02
+    Kinetic En.   Total Energy    Temperature Pressure (bar)
+    4.02148e-01   -1.40871e+02    9.67345e+01    0.00000e+00
+
+Large VCM(group rest):    -12.83895,      0.00000,      0.00000, Temp-cm:  1.64839e+00
+           Step           Time
+          30000       15.00000
+
+   Energies (kJ/mol)
+     Tab. Bonds        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+   -7.80383e+00    0.00000e+00    0.00000e+00   -1.34215e+02   -1.42019e+02
+    Kinetic En.   Total Energy    Temperature Pressure (bar)
+    4.29708e-01   -1.41589e+02    1.03364e+02    0.00000e+00
+
+Large VCM(group rest):     26.20184,      0.00000,      0.00000, Temp-cm:  6.86537e+00
+Large VCM(group rest):     10.11582,      0.00000,      0.00000, Temp-cm:  1.02330e+00
+Large VCM(group rest):    -12.19487,      0.00000,      0.00000, Temp-cm:  1.48715e+00
+           Step           Time
+          31000       15.50000
+
+   Energies (kJ/mol)
+     Tab. Bonds        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+   -4.04042e+00    0.00000e+00    0.00000e+00   -1.39644e+02   -1.43685e+02
+    Kinetic En.   Total Energy    Temperature Pressure (bar)
+    2.12239e+00   -1.41562e+02    5.10530e+02    0.00000e+00
+
+Large VCM(group rest):     12.05787,      0.00000,      0.00000, Temp-cm:  1.45392e+00
+Large VCM(group rest):     10.03693,      0.00000,      0.00000, Temp-cm:  1.00740e+00
+Large VCM(group rest):    -13.19193,      0.00000,      0.00000, Temp-cm:  1.74027e+00
+           Step           Time
+          32000       16.00000
+
+   Energies (kJ/mol)
+     Tab. Bonds        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+   -4.62142e-01    0.00000e+00    0.00000e+00   -1.45248e+02   -1.45710e+02
+    Kinetic En.   Total Energy    Temperature Pressure (bar)
+    1.56161e+00   -1.44148e+02    3.75636e+02    0.00000e+00
+
+Large VCM(group rest):     11.31518,      0.00000,      0.00000, Temp-cm:  1.28033e+00
+Large VCM(group rest):    -10.09430,      0.00000,      0.00000, Temp-cm:  1.01895e+00
+           Step           Time
+          33000       16.50000
+
+Large VCM(group rest):    -11.26067,      0.00000,      0.00000, Temp-cm:  1.26803e+00
+   Energies (kJ/mol)
+     Tab. Bonds        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+   -9.95423e+00    0.00000e+00    0.00000e+00   -1.37688e+02   -1.47642e+02
+    Kinetic En.   Total Energy    Temperature Pressure (bar)
+    7.99169e-01   -1.46843e+02    1.92236e+02    0.00000e+00
+
+Large VCM(group rest):    -13.14196,      0.00000,      0.00000, Temp-cm:  1.72711e+00
+Large VCM(group rest):    -15.34118,      0.00000,      0.00000, Temp-cm:  2.35352e+00
+Large VCM(group rest):    -12.30334,      0.00000,      0.00000, Temp-cm:  1.51372e+00
+           Step           Time
+          34000       17.00000
+
+Large VCM(group rest):     20.00069,      0.00000,      0.00000, Temp-cm:  4.00028e+00
+   Energies (kJ/mol)
+     Tab. Bonds        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+   -2.35910e-01    0.00000e+00    0.00000e+00   -1.47880e+02   -1.48116e+02
+    Kinetic En.   Total Energy    Temperature Pressure (bar)
+    1.41986e+00   -1.46696e+02    3.41539e+02    0.00000e+00
+
+Large VCM(group rest):     16.21992,      0.00000,      0.00000, Temp-cm:  2.63086e+00
+Large VCM(group rest):    -10.83080,      0.00000,      0.00000, Temp-cm:  1.17306e+00
+Large VCM(group rest):     10.14543,      0.00000,      0.00000, Temp-cm:  1.02930e+00
+Large VCM(group rest):     20.83487,      0.00000,      0.00000, Temp-cm:  4.34092e+00
+           Step           Time
+          35000       17.50000
+
+   Energies (kJ/mol)
+     Tab. Bonds        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+   -6.96144e+00    0.00000e+00    0.00000e+00   -1.41814e+02   -1.48775e+02
+    Kinetic En.   Total Energy    Temperature Pressure (bar)
+    7.44401e-01   -1.48031e+02    1.79062e+02    0.00000e+00
+
+Large VCM(group rest):     17.93433,      0.00000,      0.00000, Temp-cm:  3.21640e+00
+Large VCM(group rest):     10.73062,      0.00000,      0.00000, Temp-cm:  1.15146e+00
+Large VCM(group rest):    -11.66942,      0.00000,      0.00000, Temp-cm:  1.36175e+00
+           Step           Time
+          36000       18.00000
+
+Large VCM(group rest):     12.02630,      0.00000,      0.00000, Temp-cm:  1.44632e+00
+   Energies (kJ/mol)
+     Tab. Bonds        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+   -8.19565e+00    0.00000e+00    0.00000e+00   -1.42441e+02   -1.50637e+02
+    Kinetic En.   Total Energy    Temperature Pressure (bar)
+    1.18931e+00   -1.49448e+02    2.86082e+02    0.00000e+00
+
+Large VCM(group rest):    -14.17881,      0.00000,      0.00000, Temp-cm:  2.01039e+00
+Large VCM(group rest):     20.13064,      0.00000,      0.00000, Temp-cm:  4.05243e+00
+Large VCM(group rest):     16.10769,      0.00000,      0.00000, Temp-cm:  2.59458e+00
+Large VCM(group rest):    -11.74443,      0.00000,      0.00000, Temp-cm:  1.37932e+00
+Large VCM(group rest):    -12.69872,      0.00000,      0.00000, Temp-cm:  1.61257e+00
+           Step           Time
+          37000       18.50000
+
+   Energies (kJ/mol)
+     Tab. Bonds        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+   -3.70107e+00    0.00000e+00    0.00000e+00   -1.49299e+02   -1.53000e+02
+    Kinetic En.   Total Energy    Temperature Pressure (bar)
+    7.70702e-01   -1.52229e+02    1.85388e+02    0.00000e+00
+
+Large VCM(group rest):    -10.04807,      0.00000,      0.00000, Temp-cm:  1.00964e+00
+Large VCM(group rest):     12.35234,      0.00000,      0.00000, Temp-cm:  1.52580e+00
+
+awh1: covering at t = 18.85 ps. Decreased the update size.
+Large VCM(group rest):     11.80727,      0.00000,      0.00000, Temp-cm:  1.39412e+00
+           Step           Time
+          38000       19.00000
+
+Large VCM(group rest):     17.26849,      0.00000,      0.00000, Temp-cm:  2.98201e+00
+   Energies (kJ/mol)
+     Tab. Bonds        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+   -9.97113e+00    0.00000e+00    0.00000e+00   -1.44064e+02   -1.54035e+02
+    Kinetic En.   Total Energy    Temperature Pressure (bar)
+    2.57221e+00   -1.51462e+02    6.18733e+02    0.00000e+00
+
+Large VCM(group rest):    -14.30871,      0.00000,      0.00000, Temp-cm:  2.04739e+00
+Large VCM(group rest):    -12.23434,      0.00000,      0.00000, Temp-cm:  1.49679e+00
+Large VCM(group rest):     12.36161,      0.00000,      0.00000, Temp-cm:  1.52809e+00
+           Step           Time
+          39000       19.50000
+
+   Energies (kJ/mol)
+     Tab. Bonds        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+   -1.95649e+00    0.00000e+00    0.00000e+00   -1.52743e+02   -1.54700e+02
+    Kinetic En.   Total Energy    Temperature Pressure (bar)
+    3.83321e-01   -1.54317e+02    9.22058e+01    0.00000e+00
+
+Large VCM(group rest):    -14.74294,      0.00000,      0.00000, Temp-cm:  2.17354e+00
+Large VCM(group rest):     13.22954,      0.00000,      0.00000, Temp-cm:  1.75021e+00
+Large VCM(group rest):     17.72055,      0.00000,      0.00000, Temp-cm:  3.14018e+00
+Large VCM(group rest):     30.22589,      0.00000,      0.00000, Temp-cm:  9.13604e+00
+Large VCM(group rest):    -16.17167,      0.00000,      0.00000, Temp-cm:  2.61523e+00
+           Step           Time
+          40000       20.00000
+
+Large VCM(group rest):     18.45693,      0.00000,      0.00000, Temp-cm:  3.40658e+00
+   Energies (kJ/mol)
+     Tab. Bonds        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+   -1.03418e-03    0.00000e+00    0.00000e+00   -1.55405e+02   -1.55406e+02
+    Kinetic En.   Total Energy    Temperature Pressure (bar)
+    1.42868e+00   -1.53978e+02    3.43661e+02    0.00000e+00
+
+           Step           Time
+          41000       20.50000
+
+Large VCM(group rest):    -12.51008,      0.00000,      0.00000, Temp-cm:  1.56502e+00
+   Energies (kJ/mol)
+     Tab. Bonds        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+   -2.72239e-01    0.00000e+00    0.00000e+00   -1.55171e+02   -1.55443e+02
+    Kinetic En.   Total Energy    Temperature Pressure (bar)
+    1.06035e+00   -1.54383e+02    2.55062e+02    0.00000e+00
+
+Large VCM(group rest):     14.35865,      0.00000,      0.00000, Temp-cm:  2.06171e+00
+Large VCM(group rest):    -10.04560,      0.00000,      0.00000, Temp-cm:  1.00914e+00
+Large VCM(group rest):     11.37438,      0.00000,      0.00000, Temp-cm:  1.29376e+00
+           Step           Time
+          42000       21.00000
+
+Large VCM(group rest):    -13.54629,      0.00000,      0.00000, Temp-cm:  1.83502e+00
+   Energies (kJ/mol)
+     Tab. Bonds        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+   -3.61083e-01    0.00000e+00    0.00000e+00   -1.55673e+02   -1.56034e+02
+    Kinetic En.   Total Energy    Temperature Pressure (bar)
+    7.28156e-01   -1.55306e+02    1.75154e+02    0.00000e+00
+
+Large VCM(group rest):    -10.77546,      0.00000,      0.00000, Temp-cm:  1.16110e+00
+Large VCM(group rest):     11.83777,      0.00000,      0.00000, Temp-cm:  1.40133e+00
+Large VCM(group rest):    -13.92273,      0.00000,      0.00000, Temp-cm:  1.93842e+00
+Large VCM(group rest):     10.90774,      0.00000,      0.00000, Temp-cm:  1.18979e+00
+           Step           Time
+          43000       21.50000
+
+   Energies (kJ/mol)
+     Tab. Bonds        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+   -8.21582e+00    0.00000e+00    0.00000e+00   -1.49794e+02   -1.58010e+02
+    Kinetic En.   Total Energy    Temperature Pressure (bar)
+    9.90815e-01   -1.57019e+02    2.38335e+02    0.00000e+00
+
+Large VCM(group rest):     13.22709,      0.00000,      0.00000, Temp-cm:  1.74956e+00
+Large VCM(group rest):     14.56025,      0.00000,      0.00000, Temp-cm:  2.12001e+00
+Large VCM(group rest):     21.69481,      0.00000,      0.00000, Temp-cm:  4.70665e+00
+Large VCM(group rest):     14.33947,      0.00000,      0.00000, Temp-cm:  2.05620e+00
+           Step           Time
+          44000       22.00000
+
+Large VCM(group rest):     17.90844,      0.00000,      0.00000, Temp-cm:  3.20712e+00
+   Energies (kJ/mol)
+     Tab. Bonds        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+   -3.16332e+00    0.00000e+00    0.00000e+00   -1.56396e+02   -1.59560e+02
+    Kinetic En.   Total Energy    Temperature Pressure (bar)
+    1.37716e+00   -1.58182e+02    3.31269e+02    0.00000e+00
+
+Large VCM(group rest):     11.07539,      0.00000,      0.00000, Temp-cm:  1.22664e+00
+           Step           Time
+          45000       22.50000
+
+   Energies (kJ/mol)
+     Tab. Bonds        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+   -7.66015e+00    0.00000e+00    0.00000e+00   -1.51974e+02   -1.59634e+02
+    Kinetic En.   Total Energy    Temperature Pressure (bar)
+    2.61792e+00   -1.57016e+02    6.29727e+02    0.00000e+00
+
+Large VCM(group rest):     20.47203,      0.00000,      0.00000, Temp-cm:  4.19104e+00
+           Step           Time
+          46000       23.00000
+
+   Energies (kJ/mol)
+     Tab. Bonds        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+   -5.86637e+00    0.00000e+00    0.00000e+00   -1.54131e+02   -1.59997e+02
+    Kinetic En.   Total Energy    Temperature Pressure (bar)
+    2.02971e-01   -1.59795e+02    4.88236e+01    0.00000e+00
+
+Large VCM(group rest):    -30.52002,      0.00000,      0.00000, Temp-cm:  9.31471e+00
+Large VCM(group rest):    -12.25187,      0.00000,      0.00000, Temp-cm:  1.50108e+00
+Large VCM(group rest):     16.49367,      0.00000,      0.00000, Temp-cm:  2.72041e+00
+           Step           Time
+          47000       23.50000
+
+   Energies (kJ/mol)
+     Tab. Bonds        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+   -8.99045e+00    0.00000e+00    0.00000e+00   -1.51701e+02   -1.60692e+02
+    Kinetic En.   Total Energy    Temperature Pressure (bar)
+    5.19435e-01   -1.60172e+02    1.24947e+02    0.00000e+00
+
+Large VCM(group rest):    -22.48842,      0.00000,      0.00000, Temp-cm:  5.05729e+00
+Large VCM(group rest):     25.44232,      0.00000,      0.00000, Temp-cm:  6.47312e+00
+Large VCM(group rest):    -11.89165,      0.00000,      0.00000, Temp-cm:  1.41411e+00
+Large VCM(group rest):     11.81030,      0.00000,      0.00000, Temp-cm:  1.39483e+00
+Large VCM(group rest):     15.30759,      0.00000,      0.00000, Temp-cm:  2.34322e+00
+Large VCM(group rest):    -18.22943,      0.00000,      0.00000, Temp-cm:  3.32312e+00
+           Step           Time
+          48000       24.00000
+
+   Energies (kJ/mol)
+     Tab. Bonds        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+   -9.75896e+00    0.00000e+00    0.00000e+00   -1.51191e+02   -1.60950e+02
+    Kinetic En.   Total Energy    Temperature Pressure (bar)
+    1.57407e+00   -1.59376e+02    3.78634e+02    0.00000e+00
+
+Large VCM(group rest):    -11.27338,      0.00000,      0.00000, Temp-cm:  1.27089e+00
+           Step           Time
+          49000       24.50000
+
+Large VCM(group rest):    -12.38664,      0.00000,      0.00000, Temp-cm:  1.53429e+00
+   Energies (kJ/mol)
+     Tab. Bonds        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+   -5.07937e+00    0.00000e+00    0.00000e+00   -1.56282e+02   -1.61361e+02
+    Kinetic En.   Total Energy    Temperature Pressure (bar)
+    1.12414e+00   -1.60237e+02    2.70407e+02    0.00000e+00
+
+Large VCM(group rest):     11.91748,      0.00000,      0.00000, Temp-cm:  1.42026e+00
+Large VCM(group rest):     16.85746,      0.00000,      0.00000, Temp-cm:  2.84174e+00
+           Step           Time
+          50000       25.00000
+
+   Energies (kJ/mol)
+     Tab. Bonds        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+   -4.30556e+00    0.00000e+00    0.00000e+00   -1.57740e+02   -1.62045e+02
+    Kinetic En.   Total Energy    Temperature Pressure (bar)
+    2.57157e+00   -1.59474e+02    6.18578e+02    0.00000e+00
+
+Large VCM(group rest):    -19.33110,      0.00000,      0.00000, Temp-cm:  3.73692e+00
+Large VCM(group rest):    -10.86307,      0.00000,      0.00000, Temp-cm:  1.18006e+00
+           Step           Time
+          51000       25.50000
+
+   Energies (kJ/mol)
+     Tab. Bonds        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+   -3.54274e+00    0.00000e+00    0.00000e+00   -1.58697e+02   -1.62240e+02
+    Kinetic En.   Total Energy    Temperature Pressure (bar)
+    1.12978e+00   -1.61110e+02    2.71762e+02    0.00000e+00
+
+Large VCM(group rest):     11.43214,      0.00000,      0.00000, Temp-cm:  1.30694e+00
+Large VCM(group rest):    -19.06208,      0.00000,      0.00000, Temp-cm:  3.63363e+00
+Large VCM(group rest):    -20.26122,      0.00000,      0.00000, Temp-cm:  4.10517e+00
+           Step           Time
+          52000       26.00000
+
+   Energies (kJ/mol)
+     Tab. Bonds        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+   -9.66844e+00    0.00000e+00    0.00000e+00   -1.53531e+02   -1.63199e+02
+    Kinetic En.   Total Energy    Temperature Pressure (bar)
+    8.46189e-02   -1.63114e+02    2.03546e+01    0.00000e+00
+
+Large VCM(group rest):     20.15389,      0.00000,      0.00000, Temp-cm:  4.06179e+00
+           Step           Time
+          53000       26.50000
+
+   Energies (kJ/mol)
+     Tab. Bonds        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+   -8.25496e+00    0.00000e+00    0.00000e+00   -1.55229e+02   -1.63484e+02
+    Kinetic En.   Total Energy    Temperature Pressure (bar)
+    2.44714e-01   -1.63240e+02    5.88646e+01    0.00000e+00
+
+Large VCM(group rest):     12.55931,      0.00000,      0.00000, Temp-cm:  1.57736e+00
+Large VCM(group rest):    -26.56525,      0.00000,      0.00000, Temp-cm:  7.05712e+00
+Large VCM(group rest):    -12.65272,      0.00000,      0.00000, Temp-cm:  1.60091e+00
+Large VCM(group rest):    -18.81339,      0.00000,      0.00000, Temp-cm:  3.53944e+00
+           Step           Time
+          54000       27.00000
+
+   Energies (kJ/mol)
+     Tab. Bonds        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+   -1.99240e+00    0.00000e+00    0.00000e+00   -1.62298e+02   -1.64290e+02
+    Kinetic En.   Total Energy    Temperature Pressure (bar)
+    6.75577e-01   -1.63615e+02    1.62506e+02    0.00000e+00
+
+Large VCM(group rest):     15.42838,      0.00000,      0.00000, Temp-cm:  2.38035e+00
+Large VCM(group rest):     10.63563,      0.00000,      0.00000, Temp-cm:  1.13117e+00
+Large VCM(group rest):    -16.29177,      0.00000,      0.00000, Temp-cm:  2.65422e+00
+Large VCM(group rest):    -13.63607,      0.00000,      0.00000, Temp-cm:  1.85942e+00
+Large VCM(group rest):    -23.99519,      0.00000,      0.00000, Temp-cm:  5.75769e+00
+Large VCM(group rest):    -27.53218,      0.00000,      0.00000, Temp-cm:  7.58021e+00
+           Step           Time
+          55000       27.50000
+
+   Energies (kJ/mol)
+     Tab. Bonds        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+   -1.76931e-01    0.00000e+00    0.00000e+00   -1.63811e+02   -1.63988e+02
+    Kinetic En.   Total Energy    Temperature Pressure (bar)
+    9.77535e-01   -1.63011e+02    2.35141e+02    0.00000e+00
+
+Large VCM(group rest):    -12.60238,      0.00000,      0.00000, Temp-cm:  1.58820e+00
+Large VCM(group rest):    -14.61504,      0.00000,      0.00000, Temp-cm:  2.13599e+00
+Large VCM(group rest):     16.31653,      0.00000,      0.00000, Temp-cm:  2.66229e+00
+           Step           Time
+          56000       28.00000
+
+   Energies (kJ/mol)
+     Tab. Bonds        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+   -6.83756e-01    0.00000e+00    0.00000e+00   -1.64308e+02   -1.64992e+02
+    Kinetic En.   Total Energy    Temperature Pressure (bar)
+    6.23545e-01   -1.64368e+02    1.49991e+02    0.00000e+00
+
+Large VCM(group rest):     12.86403,      0.00000,      0.00000, Temp-cm:  1.65483e+00
+Large VCM(group rest):    -13.52786,      0.00000,      0.00000, Temp-cm:  1.83003e+00
+           Step           Time
+          57000       28.50000
+
+   Energies (kJ/mol)
+     Tab. Bonds        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+   -6.72782e+00    0.00000e+00    0.00000e+00   -1.59070e+02   -1.65798e+02
+    Kinetic En.   Total Energy    Temperature Pressure (bar)
+    8.66752e-01   -1.64931e+02    2.08493e+02    0.00000e+00
+
+Large VCM(group rest):    -19.92494,      0.00000,      0.00000, Temp-cm:  3.97003e+00
+Large VCM(group rest):    -19.96753,      0.00000,      0.00000, Temp-cm:  3.98702e+00
+Large VCM(group rest):     21.24496,      0.00000,      0.00000, Temp-cm:  4.51348e+00
+           Step           Time
+          58000       29.00000
+
+Large VCM(group rest):     12.16002,      0.00000,      0.00000, Temp-cm:  1.47866e+00
+   Energies (kJ/mol)
+     Tab. Bonds        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+   -4.43497e+00    0.00000e+00    0.00000e+00   -1.61889e+02   -1.66324e+02
+    Kinetic En.   Total Energy    Temperature Pressure (bar)
+    1.19545e+00   -1.65128e+02    2.87559e+02    0.00000e+00
+
+Large VCM(group rest):    -18.07019,      0.00000,      0.00000, Temp-cm:  3.26532e+00
+Large VCM(group rest):    -11.09685,      0.00000,      0.00000, Temp-cm:  1.23140e+00
+Large VCM(group rest):    -21.12958,      0.00000,      0.00000, Temp-cm:  4.46459e+00
+           Step           Time
+          59000       29.50000
+
+   Energies (kJ/mol)
+     Tab. Bonds        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+   -9.99852e+00    0.00000e+00    0.00000e+00   -1.56706e+02   -1.66704e+02
+    Kinetic En.   Total Energy    Temperature Pressure (bar)
+    3.23150e-01   -1.66381e+02    7.77320e+01    0.00000e+00
+
+Large VCM(group rest):    -11.67942,      0.00000,      0.00000, Temp-cm:  1.36409e+00
+Large VCM(group rest):    -13.60999,      0.00000,      0.00000, Temp-cm:  1.85232e+00
+Large VCM(group rest):    -11.79649,      0.00000,      0.00000, Temp-cm:  1.39157e+00
+           Step           Time
+          60000       30.00000
+
+   Energies (kJ/mol)
+     Tab. Bonds        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+   -4.91627e+00    0.00000e+00    0.00000e+00   -1.62300e+02   -1.67217e+02
+    Kinetic En.   Total Energy    Temperature Pressure (bar)
+    5.55018e-01   -1.66662e+02    1.33507e+02    0.00000e+00
+
+Large VCM(group rest):     12.65538,      0.00000,      0.00000, Temp-cm:  1.60159e+00
+Large VCM(group rest):     12.43919,      0.00000,      0.00000, Temp-cm:  1.54733e+00
+           Step           Time
+          61000       30.50000
+
+   Energies (kJ/mol)
+     Tab. Bonds        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+   -7.71048e+00    0.00000e+00    0.00000e+00   -1.59684e+02   -1.67395e+02
+    Kinetic En.   Total Energy    Temperature Pressure (bar)
+    9.14241e-01   -1.66481e+02    2.19916e+02    0.00000e+00
+
+Large VCM(group rest):     13.55014,      0.00000,      0.00000, Temp-cm:  1.83606e+00
+Large VCM(group rest):     10.15908,      0.00000,      0.00000, Temp-cm:  1.03207e+00
+           Step           Time
+          62000       31.00000
+
+   Energies (kJ/mol)
+     Tab. Bonds        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+   -9.22121e+00    0.00000e+00    0.00000e+00   -1.59349e+02   -1.68570e+02
+    Kinetic En.   Total Energy    Temperature Pressure (bar)
+    2.35523e+00   -1.66215e+02    5.66538e+02    0.00000e+00
+
+Large VCM(group rest):    -26.78946,      0.00000,      0.00000, Temp-cm:  7.17675e+00
+Large VCM(group rest):     16.44722,      0.00000,      0.00000, Temp-cm:  2.70511e+00
+Large VCM(group rest):    -11.91427,      0.00000,      0.00000, Temp-cm:  1.41950e+00
+           Step           Time
+          63000       31.50000
+
+Large VCM(group rest):    -10.64872,      0.00000,      0.00000, Temp-cm:  1.13395e+00
+   Energies (kJ/mol)
+     Tab. Bonds        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+   -9.73129e+00    0.00000e+00    0.00000e+00   -1.58972e+02   -1.68703e+02
+    Kinetic En.   Total Energy    Temperature Pressure (bar)
+    2.39136e+00   -1.66312e+02    5.75229e+02    0.00000e+00
+
+Large VCM(group rest):    -13.40817,      0.00000,      0.00000, Temp-cm:  1.79779e+00
+           Step           Time
+          64000       32.00000
+
+   Energies (kJ/mol)
+     Tab. Bonds        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+   -3.63496e+00    0.00000e+00    0.00000e+00   -1.65637e+02   -1.69272e+02
+    Kinetic En.   Total Energy    Temperature Pressure (bar)
+    4.49906e-01   -1.68822e+02    1.08223e+02    0.00000e+00
+
+Large VCM(group rest):    -24.36106,      0.00000,      0.00000, Temp-cm:  5.93461e+00
+Large VCM(group rest):     11.00001,      0.00000,      0.00000, Temp-cm:  1.21000e+00
+           Step           Time
+          65000       32.50000
+
+Large VCM(group rest):     17.53340,      0.00000,      0.00000, Temp-cm:  3.07420e+00
+   Energies (kJ/mol)
+     Tab. Bonds        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+   -7.31561e+00    0.00000e+00    0.00000e+00   -1.62234e+02   -1.69550e+02
+    Kinetic En.   Total Energy    Temperature Pressure (bar)
+    1.96758e+00   -1.67582e+02    4.73290e+02    0.00000e+00
+
+Large VCM(group rest):    -10.68689,      0.00000,      0.00000, Temp-cm:  1.14210e+00
+Large VCM(group rest):    -12.89513,      0.00000,      0.00000, Temp-cm:  1.66284e+00
+Large VCM(group rest):    -15.33234,      0.00000,      0.00000, Temp-cm:  2.35081e+00
+Large VCM(group rest):     16.11186,      0.00000,      0.00000, Temp-cm:  2.59592e+00
+Large VCM(group rest):     23.18757,      0.00000,      0.00000, Temp-cm:  5.37664e+00
+Large VCM(group rest):     16.89075,      0.00000,      0.00000, Temp-cm:  2.85297e+00
+           Step           Time
+          66000       33.00000
+
+Large VCM(group rest):    -17.39363,      0.00000,      0.00000, Temp-cm:  3.02539e+00
+   Energies (kJ/mol)
+     Tab. Bonds        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+   -9.22295e+00    0.00000e+00    0.00000e+00   -1.60764e+02   -1.69987e+02
+    Kinetic En.   Total Energy    Temperature Pressure (bar)
+    9.52310e-01   -1.69035e+02    2.29073e+02    0.00000e+00
+
+Large VCM(group rest):    -15.85692,      0.00000,      0.00000, Temp-cm:  2.51442e+00
+Large VCM(group rest):    -12.01918,      0.00000,      0.00000, Temp-cm:  1.44461e+00
+Large VCM(group rest):    -10.15985,      0.00000,      0.00000, Temp-cm:  1.03223e+00
+Large VCM(group rest):    -18.03459,      0.00000,      0.00000, Temp-cm:  3.25246e+00
+Large VCM(group rest):    -12.79884,      0.00000,      0.00000, Temp-cm:  1.63810e+00
+Large VCM(group rest):     10.64417,      0.00000,      0.00000, Temp-cm:  1.13298e+00
+           Step           Time
+          67000       33.50000
+
+   Energies (kJ/mol)
+     Tab. Bonds        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+   -8.08454e+00    0.00000e+00    0.00000e+00   -1.62503e+02   -1.70587e+02
+    Kinetic En.   Total Energy    Temperature Pressure (bar)
+    6.91281e-01   -1.69896e+02    1.66284e+02    0.00000e+00
+
+Large VCM(group rest):     16.46815,      0.00000,      0.00000, Temp-cm:  2.71200e+00
+Large VCM(group rest):     11.45286,      0.00000,      0.00000, Temp-cm:  1.31168e+00
+           Step           Time
+          68000       34.00000
+
+   Energies (kJ/mol)
+     Tab. Bonds        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+   -3.58588e+00    0.00000e+00    0.00000e+00   -1.68369e+02   -1.71955e+02
+    Kinetic En.   Total Energy    Temperature Pressure (bar)
+    7.97049e-01   -1.71157e+02    1.91726e+02    0.00000e+00
+
+Large VCM(group rest):     15.34200,      0.00000,      0.00000, Temp-cm:  2.35377e+00
+Large VCM(group rest):    -11.54230,      0.00000,      0.00000, Temp-cm:  1.33225e+00
+           Step           Time
+          69000       34.50000
+
+Large VCM(group rest):     14.31443,      0.00000,      0.00000, Temp-cm:  2.04903e+00
+   Energies (kJ/mol)
+     Tab. Bonds        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+   -3.05717e+00    0.00000e+00    0.00000e+00   -1.68997e+02   -1.72055e+02
+    Kinetic En.   Total Energy    Temperature Pressure (bar)
+    2.16997e+00   -1.69885e+02    5.21974e+02    0.00000e+00
+
+Large VCM(group rest):    -17.33581,      0.00000,      0.00000, Temp-cm:  3.00530e+00
+           Step           Time
+          70000       35.00000
+
+   Energies (kJ/mol)
+     Tab. Bonds        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+   -8.56404e+00    0.00000e+00    0.00000e+00   -1.64396e+02   -1.72960e+02
+    Kinetic En.   Total Energy    Temperature Pressure (bar)
+    2.76999e-01   -1.72683e+02    6.66306e+01    0.00000e+00
+
+Large VCM(group rest):    -13.26119,      0.00000,      0.00000, Temp-cm:  1.75859e+00
+Large VCM(group rest):    -17.48124,      0.00000,      0.00000, Temp-cm:  3.05594e+00
+Large VCM(group rest):     17.37915,      0.00000,      0.00000, Temp-cm:  3.02035e+00
+Large VCM(group rest):    -19.90442,      0.00000,      0.00000, Temp-cm:  3.96186e+00
+           Step           Time
+          71000       35.50000
+
+   Energies (kJ/mol)
+     Tab. Bonds        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+   -9.95643e+00    0.00000e+00    0.00000e+00   -1.63989e+02   -1.73945e+02
+    Kinetic En.   Total Energy    Temperature Pressure (bar)
+    3.29688e-01   -1.73616e+02    7.93046e+01    0.00000e+00
+
+Large VCM(group rest):     17.68210,      0.00000,      0.00000, Temp-cm:  3.12657e+00
+
+awh1: covering at t = 35.75 ps. Decreased the update size.
+
+awh1: out of the initial stage at t = 35.75.
+Large VCM(group rest):    -20.56450,      0.00000,      0.00000, Temp-cm:  4.22899e+00
+Large VCM(group rest):     36.39645,      0.00000,      0.00000, Temp-cm:  1.32470e+01
+Large VCM(group rest):    -11.87856,      0.00000,      0.00000, Temp-cm:  1.41100e+00
+           Step           Time
+          72000       36.00000
+
+Large VCM(group rest):     16.12251,      0.00000,      0.00000, Temp-cm:  2.59935e+00
+   Energies (kJ/mol)
+     Tab. Bonds        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+   -7.88697e+00    0.00000e+00    0.00000e+00   -1.66624e+02   -1.74511e+02
+    Kinetic En.   Total Energy    Temperature Pressure (bar)
+    9.97272e-01   -1.73513e+02    2.39889e+02    0.00000e+00
+
+Large VCM(group rest):    -12.29329,      0.00000,      0.00000, Temp-cm:  1.51125e+00
+Large VCM(group rest):     16.30671,      0.00000,      0.00000, Temp-cm:  2.65909e+00
+Large VCM(group rest):    -12.51357,      0.00000,      0.00000, Temp-cm:  1.56590e+00
+Large VCM(group rest):    -14.57360,      0.00000,      0.00000, Temp-cm:  2.12390e+00
+Large VCM(group rest):    -18.35054,      0.00000,      0.00000, Temp-cm:  3.36742e+00
+           Step           Time
+          73000       36.50000
+
+   Energies (kJ/mol)
+     Tab. Bonds        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+   -4.14922e+00    0.00000e+00    0.00000e+00   -1.70505e+02   -1.74654e+02
+    Kinetic En.   Total Energy    Temperature Pressure (bar)
+    7.69564e-01   -1.73885e+02    1.85115e+02    0.00000e+00
+
+Large VCM(group rest):     12.42288,      0.00000,      0.00000, Temp-cm:  1.54328e+00
+Large VCM(group rest):    -11.41673,      0.00000,      0.00000, Temp-cm:  1.30342e+00
+Large VCM(group rest):    -12.51233,      0.00000,      0.00000, Temp-cm:  1.56558e+00
+Large VCM(group rest):     11.78378,      0.00000,      0.00000, Temp-cm:  1.38857e+00
+           Step           Time
+          74000       37.00000
+
+   Energies (kJ/mol)
+     Tab. Bonds        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+   -9.83041e+00    0.00000e+00    0.00000e+00   -1.65169e+02   -1.74999e+02
+    Kinetic En.   Total Energy    Temperature Pressure (bar)
+    9.64070e-02   -1.74903e+02    2.31902e+01    0.00000e+00
+
+Large VCM(group rest):    -25.42982,      0.00000,      0.00000, Temp-cm:  6.46676e+00
+Large VCM(group rest):    -15.61503,      0.00000,      0.00000, Temp-cm:  2.43829e+00
+           Step           Time
+          75000       37.50000
+
+Large VCM(group rest):     12.36935,      0.00000,      0.00000, Temp-cm:  1.53001e+00
+   Energies (kJ/mol)
+     Tab. Bonds        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+   -7.12606e+00    0.00000e+00    0.00000e+00   -1.68937e+02   -1.76063e+02
+    Kinetic En.   Total Energy    Temperature Pressure (bar)
+    6.52784e-01   -1.75410e+02    1.57024e+02    0.00000e+00
+
+Large VCM(group rest):     19.45235,      0.00000,      0.00000, Temp-cm:  3.78394e+00
+Large VCM(group rest):     13.41873,      0.00000,      0.00000, Temp-cm:  1.80062e+00
+Large VCM(group rest):    -11.01251,      0.00000,      0.00000, Temp-cm:  1.21275e+00
+Large VCM(group rest):     22.59683,      0.00000,      0.00000, Temp-cm:  5.10617e+00
+Large VCM(group rest):    -17.68312,      0.00000,      0.00000, Temp-cm:  3.12693e+00
+Large VCM(group rest):     14.10536,      0.00000,      0.00000, Temp-cm:  1.98961e+00
+           Step           Time
+          76000       38.00000
+
+   Energies (kJ/mol)
+     Tab. Bonds        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+   -4.98921e+00    0.00000e+00    0.00000e+00   -1.71075e+02   -1.76065e+02
+    Kinetic En.   Total Energy    Temperature Pressure (bar)
+    5.38200e-01   -1.75526e+02    1.29461e+02    0.00000e+00
+
+Large VCM(group rest):     10.95900,      0.00000,      0.00000, Temp-cm:  1.20100e+00
+Large VCM(group rest):     15.52932,      0.00000,      0.00000, Temp-cm:  2.41160e+00
+Large VCM(group rest):    -16.21129,      0.00000,      0.00000, Temp-cm:  2.62806e+00
+Large VCM(group rest):    -26.70386,      0.00000,      0.00000, Temp-cm:  7.13096e+00
+Large VCM(group rest):    -13.14043,      0.00000,      0.00000, Temp-cm:  1.72671e+00
+Large VCM(group rest):     17.25458,      0.00000,      0.00000, Temp-cm:  2.97720e+00
+           Step           Time
+          77000       38.50000
+
+Large VCM(group rest):     16.69090,      0.00000,      0.00000, Temp-cm:  2.78586e+00
+   Energies (kJ/mol)
+     Tab. Bonds        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+   -9.65462e+00    0.00000e+00    0.00000e+00   -1.66686e+02   -1.76340e+02
+    Kinetic En.   Total Energy    Temperature Pressure (bar)
+    1.05494e+00   -1.75285e+02    2.53761e+02    0.00000e+00
+
+Large VCM(group rest):    -12.12846,      0.00000,      0.00000, Temp-cm:  1.47100e+00
+Large VCM(group rest):     11.54340,      0.00000,      0.00000, Temp-cm:  1.33250e+00
+           Step           Time
+          78000       39.00000
+
+   Energies (kJ/mol)
+     Tab. Bonds        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+   -1.96085e+00    0.00000e+00    0.00000e+00   -1.75520e+02   -1.77481e+02
+    Kinetic En.   Total Energy    Temperature Pressure (bar)
+    3.30284e-01   -1.77150e+02    7.94480e+01    0.00000e+00
+
+Large VCM(group rest):     11.88074,      0.00000,      0.00000, Temp-cm:  1.41152e+00
+Large VCM(group rest):     17.69084,      0.00000,      0.00000, Temp-cm:  3.12966e+00
+           Step           Time
+          79000       39.50000
+
+   Energies (kJ/mol)
+     Tab. Bonds        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+   -2.13064e+00    0.00000e+00    0.00000e+00   -1.75596e+02   -1.77726e+02
+    Kinetic En.   Total Energy    Temperature Pressure (bar)
+    1.74873e-01   -1.77551e+02    4.20648e+01    0.00000e+00
+
+Large VCM(group rest):    -20.57261,      0.00000,      0.00000, Temp-cm:  4.23232e+00
+Large VCM(group rest):    -12.26874,      0.00000,      0.00000, Temp-cm:  1.50522e+00
+Large VCM(group rest):    -11.45280,      0.00000,      0.00000, Temp-cm:  1.31167e+00
+Large VCM(group rest):     10.50210,      0.00000,      0.00000, Temp-cm:  1.10294e+00
+           Step           Time
+          80000       40.00000
+
+   Energies (kJ/mol)
+     Tab. Bonds        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+   -6.66307e-01    0.00000e+00    0.00000e+00   -1.77182e+02   -1.77848e+02
+    Kinetic En.   Total Energy    Temperature Pressure (bar)
+    1.44584e+00   -1.76402e+02    3.47789e+02    0.00000e+00
+
+Large VCM(group rest):     11.30253,      0.00000,      0.00000, Temp-cm:  1.27747e+00
+Large VCM(group rest):    -19.80741,      0.00000,      0.00000, Temp-cm:  3.92334e+00
+           Step           Time
+          81000       40.50000
+
+   Energies (kJ/mol)
+     Tab. Bonds        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+   -8.07921e+00    0.00000e+00    0.00000e+00   -1.69914e+02   -1.77993e+02
+    Kinetic En.   Total Energy    Temperature Pressure (bar)
+    5.22278e-01   -1.77471e+02    1.25631e+02    0.00000e+00
+
+Large VCM(group rest):     19.40738,      0.00000,      0.00000, Temp-cm:  3.76646e+00
+Large VCM(group rest):     19.42038,      0.00000,      0.00000, Temp-cm:  3.77151e+00
+           Step           Time
+          82000       41.00000
+
+   Energies (kJ/mol)
+     Tab. Bonds        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+   -9.34210e+00    0.00000e+00    0.00000e+00   -1.69079e+02   -1.78421e+02
+    Kinetic En.   Total Energy    Temperature Pressure (bar)
+    3.48584e-01   -1.78072e+02    8.38500e+01    0.00000e+00
+
+Large VCM(group rest):    -13.37172,      0.00000,      0.00000, Temp-cm:  1.78803e+00
+Large VCM(group rest):     15.00639,      0.00000,      0.00000, Temp-cm:  2.25192e+00
+Large VCM(group rest):    -10.32851,      0.00000,      0.00000, Temp-cm:  1.06678e+00
+Large VCM(group rest):     10.52467,      0.00000,      0.00000, Temp-cm:  1.10769e+00
+           Step           Time
+          83000       41.50000
+
+   Energies (kJ/mol)
+     Tab. Bonds        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+   -9.09001e+00    0.00000e+00    0.00000e+00   -1.69351e+02   -1.78441e+02
+    Kinetic En.   Total Energy    Temperature Pressure (bar)
+    3.84860e-01   -1.78056e+02    9.25760e+01    0.00000e+00
+
+Large VCM(group rest):     12.12392,      0.00000,      0.00000, Temp-cm:  1.46989e+00
+Large VCM(group rest):    -10.30014,      0.00000,      0.00000, Temp-cm:  1.06093e+00
+           Step           Time
+          84000       42.00000
+
+   Energies (kJ/mol)
+     Tab. Bonds        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+   -1.82765e+00    0.00000e+00    0.00000e+00   -1.76695e+02   -1.78523e+02
+    Kinetic En.   Total Energy    Temperature Pressure (bar)
+    7.40388e-01   -1.77783e+02    1.78096e+02    0.00000e+00
+
+Large VCM(group rest):     22.23065,      0.00000,      0.00000, Temp-cm:  4.94202e+00
+Large VCM(group rest):    -11.25553,      0.00000,      0.00000, Temp-cm:  1.26687e+00
+           Step           Time
+          85000       42.50000
+
+Large VCM(group rest):     14.23767,      0.00000,      0.00000, Temp-cm:  2.02711e+00
+   Energies (kJ/mol)
+     Tab. Bonds        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+   -2.38312e+00    0.00000e+00    0.00000e+00   -1.76535e+02   -1.78918e+02
+    Kinetic En.   Total Energy    Temperature Pressure (bar)
+    9.63414e-01   -1.77955e+02    2.31744e+02    0.00000e+00
+
+Large VCM(group rest):    -14.91799,      0.00000,      0.00000, Temp-cm:  2.22547e+00
+Large VCM(group rest):     12.93770,      0.00000,      0.00000, Temp-cm:  1.67384e+00
+Large VCM(group rest):     11.62816,      0.00000,      0.00000, Temp-cm:  1.35214e+00
+           Step           Time
+          86000       43.00000
+
+   Energies (kJ/mol)
+     Tab. Bonds        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+   -6.40249e+00    0.00000e+00    0.00000e+00   -1.72906e+02   -1.79309e+02
+    Kinetic En.   Total Energy    Temperature Pressure (bar)
+    4.71138e-01   -1.78838e+02    1.13330e+02    0.00000e+00
+
+Large VCM(group rest):    -10.94232,      0.00000,      0.00000, Temp-cm:  1.19734e+00
+Large VCM(group rest):     24.34892,      0.00000,      0.00000, Temp-cm:  5.92870e+00
+Large VCM(group rest):    -11.74155,      0.00000,      0.00000, Temp-cm:  1.37864e+00
+Large VCM(group rest):    -12.70684,      0.00000,      0.00000, Temp-cm:  1.61464e+00
+Large VCM(group rest):     10.52847,      0.00000,      0.00000, Temp-cm:  1.10849e+00
+           Step           Time
+          87000       43.50000
+
+Large VCM(group rest):    -12.63096,      0.00000,      0.00000, Temp-cm:  1.59541e+00
+   Energies (kJ/mol)
+     Tab. Bonds        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+   -1.02012e-01    0.00000e+00    0.00000e+00   -1.80171e+02   -1.80273e+02
+    Kinetic En.   Total Energy    Temperature Pressure (bar)
+    3.05065e+00   -1.77222e+02    7.33818e+02    0.00000e+00
+
+Large VCM(group rest):    -10.72381,      0.00000,      0.00000, Temp-cm:  1.15000e+00
+Large VCM(group rest):    -17.19823,      0.00000,      0.00000, Temp-cm:  2.95779e+00
+Large VCM(group rest):     15.53907,      0.00000,      0.00000, Temp-cm:  2.41463e+00
+           Step           Time
+          88000       44.00000
+
+Large VCM(group rest):    -15.68736,      0.00000,      0.00000, Temp-cm:  2.46093e+00
+   Energies (kJ/mol)
+     Tab. Bonds        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+   -3.30967e-01    0.00000e+00    0.00000e+00   -1.80104e+02   -1.80435e+02
+    Kinetic En.   Total Energy    Temperature Pressure (bar)
+    2.29734e+00   -1.78137e+02    5.52612e+02    0.00000e+00
+
+           Step           Time
+          89000       44.50000
+
+Large VCM(group rest):    -14.63958,      0.00000,      0.00000, Temp-cm:  2.14317e+00
+   Energies (kJ/mol)
+     Tab. Bonds        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+   -7.99202e-01    0.00000e+00    0.00000e+00   -1.80090e+02   -1.80889e+02
+    Kinetic En.   Total Energy    Temperature Pressure (bar)
+    1.00288e+00   -1.79887e+02    2.41238e+02    0.00000e+00
+
+Large VCM(group rest):     27.88395,      0.00000,      0.00000, Temp-cm:  7.77515e+00
+Large VCM(group rest):     13.05183,      0.00000,      0.00000, Temp-cm:  1.70350e+00
+Large VCM(group rest):    -13.26418,      0.00000,      0.00000, Temp-cm:  1.75938e+00
+           Step           Time
+          90000       45.00000
+
+   Energies (kJ/mol)
+     Tab. Bonds        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+   -4.30259e-01    0.00000e+00    0.00000e+00   -1.80507e+02   -1.80937e+02
+    Kinetic En.   Total Energy    Temperature Pressure (bar)
+    1.51300e-01   -1.80786e+02    3.63943e+01    0.00000e+00
+
+Large VCM(group rest):    -17.34740,      0.00000,      0.00000, Temp-cm:  3.00932e+00
+Large VCM(group rest):    -17.41657,      0.00000,      0.00000, Temp-cm:  3.03337e+00
+           Step           Time
+          91000       45.50000
+
+Large VCM(group rest):     13.14880,      0.00000,      0.00000, Temp-cm:  1.72891e+00
+   Energies (kJ/mol)
+     Tab. Bonds        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+   -1.63154e+00    0.00000e+00    0.00000e+00   -1.79780e+02   -1.81411e+02
+    Kinetic En.   Total Energy    Temperature Pressure (bar)
+    2.47035e+00   -1.78941e+02    5.94229e+02    0.00000e+00
+
+Large VCM(group rest):    -10.18450,      0.00000,      0.00000, Temp-cm:  1.03724e+00
+Large VCM(group rest):    -23.63091,      0.00000,      0.00000, Temp-cm:  5.58420e+00
+Large VCM(group rest):     21.90959,      0.00000,      0.00000, Temp-cm:  4.80030e+00
+           Step           Time
+          92000       46.00000
+
+Large VCM(group rest):     17.23838,      0.00000,      0.00000, Temp-cm:  2.97162e+00
+   Energies (kJ/mol)
+     Tab. Bonds        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+   -5.05537e+00    0.00000e+00    0.00000e+00   -1.76666e+02   -1.81722e+02
+    Kinetic En.   Total Energy    Temperature Pressure (bar)
+    1.32264e+00   -1.80399e+02    3.18154e+02    0.00000e+00
+
+Large VCM(group rest):     11.61395,      0.00000,      0.00000, Temp-cm:  1.34884e+00
+Large VCM(group rest):    -10.14549,      0.00000,      0.00000, Temp-cm:  1.02931e+00
+Large VCM(group rest):    -14.62147,      0.00000,      0.00000, Temp-cm:  2.13787e+00
+           Step           Time
+          93000       46.50000
+
+   Energies (kJ/mol)
+     Tab. Bonds        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+   -3.68052e+00    0.00000e+00    0.00000e+00   -1.78381e+02   -1.82061e+02
+    Kinetic En.   Total Energy    Temperature Pressure (bar)
+    1.29024e+00   -1.80771e+02    3.10361e+02    0.00000e+00
+
+Large VCM(group rest):    -10.16197,      0.00000,      0.00000, Temp-cm:  1.03266e+00
+Large VCM(group rest):     13.71374,      0.00000,      0.00000, Temp-cm:  1.88067e+00
+           Step           Time
+          94000       47.00000
+
+Large VCM(group rest):     29.29643,      0.00000,      0.00000, Temp-cm:  8.58281e+00
+   Energies (kJ/mol)
+     Tab. Bonds        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+   -4.90153e+00    0.00000e+00    0.00000e+00   -1.77011e+02   -1.81912e+02
+    Kinetic En.   Total Energy    Temperature Pressure (bar)
+    2.22795e+00   -1.79684e+02    5.35922e+02    0.00000e+00
+
+Large VCM(group rest):     34.09174,      0.00000,      0.00000, Temp-cm:  1.16225e+01
+Large VCM(group rest):     24.65554,      0.00000,      0.00000, Temp-cm:  6.07896e+00
+           Step           Time
+          95000       47.50000
+
+   Energies (kJ/mol)
+     Tab. Bonds        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+   -9.36832e-01    0.00000e+00    0.00000e+00   -1.81344e+02   -1.82281e+02
+    Kinetic En.   Total Energy    Temperature Pressure (bar)
+    9.76502e-01   -1.81305e+02    2.34892e+02    0.00000e+00
+
+Large VCM(group rest):    -13.08889,      0.00000,      0.00000, Temp-cm:  1.71319e+00
+Large VCM(group rest):    -27.04965,      0.00000,      0.00000, Temp-cm:  7.31684e+00
+           Step           Time
+          96000       48.00000
+
+Large VCM(group rest):     10.81565,      0.00000,      0.00000, Temp-cm:  1.16978e+00
+   Energies (kJ/mol)
+     Tab. Bonds        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+   -4.60747e+00    0.00000e+00    0.00000e+00   -1.78014e+02   -1.82622e+02
+    Kinetic En.   Total Energy    Temperature Pressure (bar)
+    6.16138e-01   -1.82006e+02    1.48209e+02    0.00000e+00
+
+Large VCM(group rest):    -16.07953,      0.00000,      0.00000, Temp-cm:  2.58551e+00
+Large VCM(group rest):    -16.93324,      0.00000,      0.00000, Temp-cm:  2.86735e+00
+           Step           Time
+          97000       48.50000
+
+   Energies (kJ/mol)
+     Tab. Bonds        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+   -3.51406e+00    0.00000e+00    0.00000e+00   -1.79226e+02   -1.82741e+02
+    Kinetic En.   Total Energy    Temperature Pressure (bar)
+    4.08233e-02   -1.82700e+02    9.81982e+00    0.00000e+00
+
+Large VCM(group rest):     32.54841,      0.00000,      0.00000, Temp-cm:  1.05940e+01
+Large VCM(group rest):     10.49878,      0.00000,      0.00000, Temp-cm:  1.10224e+00
+           Step           Time
+          98000       49.00000
+
+Large VCM(group rest):     10.27589,      0.00000,      0.00000, Temp-cm:  1.05594e+00
+   Energies (kJ/mol)
+     Tab. Bonds        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+   -4.66620e-01    0.00000e+00    0.00000e+00   -1.82169e+02   -1.82635e+02
+    Kinetic En.   Total Energy    Temperature Pressure (bar)
+    3.87717e-01   -1.82248e+02    9.32632e+01    0.00000e+00
+
+Large VCM(group rest):    -17.67265,      0.00000,      0.00000, Temp-cm:  3.12322e+00
+Large VCM(group rest):    -23.13249,      0.00000,      0.00000, Temp-cm:  5.35112e+00
+Large VCM(group rest):     12.02298,      0.00000,      0.00000, Temp-cm:  1.44552e+00
+Large VCM(group rest):     18.87729,      0.00000,      0.00000, Temp-cm:  3.56352e+00
+Large VCM(group rest):    -15.83535,      0.00000,      0.00000, Temp-cm:  2.50758e+00
+Large VCM(group rest):    -13.63426,      0.00000,      0.00000, Temp-cm:  1.85893e+00
+           Step           Time
+          99000       49.50000
+
+   Energies (kJ/mol)
+     Tab. Bonds        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+   -3.23925e+00    0.00000e+00    0.00000e+00   -1.79836e+02   -1.83075e+02
+    Kinetic En.   Total Energy    Temperature Pressure (bar)
+    1.70203e+00   -1.81373e+02    4.09414e+02    0.00000e+00
+
+Large VCM(group rest):     15.61404,      0.00000,      0.00000, Temp-cm:  2.43798e+00
+Large VCM(group rest):    -10.05154,      0.00000,      0.00000, Temp-cm:  1.01033e+00
+Large VCM(group rest):     14.92126,      0.00000,      0.00000, Temp-cm:  2.22644e+00
+           Step           Time
+         100000       50.00000
+
+Writing checkpoint, step 100000 at Tue Apr 17 12:39:36 2018
+
+
+   Energies (kJ/mol)
+     Tab. Bonds        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+   -1.98637e-01    0.00000e+00    0.00000e+00   -1.82678e+02   -1.82877e+02
+    Kinetic En.   Total Energy    Temperature Pressure (bar)
+    8.24836e-01   -1.82052e+02    1.98410e+02    0.00000e+00
+
+	<======  ###############  ==>
+	<====  A V E R A G E S  ====>
+	<==  ###############  ======>
+
+	Statistics over 100001 steps using 1001 frames
+
+   Energies (kJ/mol)
+     Tab. Bonds        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+   -5.33948e+00    0.00000e+00    0.00000e+00   -1.40411e+02   -1.45750e+02
+    Kinetic En.   Total Energy    Temperature Pressure (bar)
+    9.81374e-01   -1.44769e+02    2.36064e+02    0.00000e+00
+
+   Total Virial (kJ/mol)
+    4.22558e-01    0.00000e+00    0.00000e+00
+    0.00000e+00    0.00000e+00    0.00000e+00
+    0.00000e+00    0.00000e+00    0.00000e+00
+
+   Pressure (bar)
+    0.00000e+00    0.00000e+00    0.00000e+00
+    0.00000e+00    0.00000e+00    0.00000e+00
+    0.00000e+00    0.00000e+00    0.00000e+00
+
+
+	M E G A - F L O P S   A C C O U N T I N G
+
+ NB=Group-cutoff nonbonded kernels    NxN=N-by-N cluster Verlet kernels
+ RF=Reaction-Field  VdW=Van der Waals  QSTab=quadratic-spline table
+ W3=SPC/TIP3p  W4=TIP4p (single or pairs)
+ V&F=Potential and force  V=Potential only  F=Force only
+
+ Computing:                               M-Number         M-Flops  % Flops
+-----------------------------------------------------------------------------
+ NS-Pairs                                 0.010001           0.210     2.5
+ CG-CoM                                   0.020002           0.060     0.7
+ Tab. Bonds                               0.100001           6.200    73.7
+ Virial                                   0.047047           0.847    10.1
+ Stop-CM                                  0.002004           0.020     0.2
+ Calc-Ekin                                0.040004           1.080    12.8
+-----------------------------------------------------------------------------
+ Total                                                       8.417   100.0
+-----------------------------------------------------------------------------
+
+
+     R E A L   C Y C L E   A N D   T I M E   A C C O U N T I N G
+
+On 1 MPI rank
+
+ Computing:          Num   Num      Call    Wall time         Giga-Cycles
+                     Ranks Threads  Count      (s)         total sum    %
+-----------------------------------------------------------------------------
+ Neighbor search        1    1      10001       0.008          0.019   1.7
+ Force                  1    1     100001       0.080          0.184  16.9
+ COM pull force         1    1     100001       0.028          0.064   5.9
+ AWH                    1    1     100001       0.123          0.282  25.9
+ Write traj.            1    1          1       0.009          0.020   1.9
+ Update                 1    1     100001       0.037          0.086   7.9
+ Rest                                           0.189          0.434  39.9
+-----------------------------------------------------------------------------
+ Total                                          0.474          1.089 100.0
+-----------------------------------------------------------------------------
+
+               Core t (s)   Wall t (s)        (%)
+       Time:        0.474        0.474      100.0
+                 (ns/day)    (hour/ns)
+Performance:     9112.654        0.003
+Finished mdrun on rank 0 Tue Apr 17 12:39:36 2018

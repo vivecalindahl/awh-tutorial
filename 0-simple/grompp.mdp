@@ -1,6 +1,6 @@
 integrator               = bd
 dt                       = 0.0005
-nsteps 			 = 200000
+nsteps 			 = 100000
 
 tau-t			 = 0.05
 ref-t                    = 120.27236      ; kT = 1 kJ/mol
@@ -19,7 +19,7 @@ freezegrps		 = H1 H2
 freezedim		 = N Y Y N Y Y
 
 pull                    = yes
-pull-nstxout		= 200
+pull-nstxout		= 20
 pull-nstfout		= 0
 
 pull-ngroups		= 2
@@ -35,10 +35,12 @@ pull-coord1-type	= external-potential
 pull-coord1-potential-provider= awh
 
 awh			= yes
+awh-nstout		= 20000
+
 awh1-ndim		= 1
-awh1-dim1-coord-index   = 1
 awh1-error-init	        = 3
+awh1-dim1-diffusion     = 0.1           ; tau/(m/2) = tau/1*2
+awh1-dim1-coord-index   = 1
 awh1-dim1-start         = 0.3
 awh1-dim1-end           = 1.7
-awh1-dim1-diffusion     = 0.1           ; tau/(m/2) = tau/1*2
 awh1-dim1-force-constant= 8000

@@ -1,0 +1,2 @@
+63346  gmx mdrun -v -quiet -s ../topol.tpr  -tableb ../table_b0.xvg 
+63347  gmx awh -s ../topol.tpr -f ener.edr -more
