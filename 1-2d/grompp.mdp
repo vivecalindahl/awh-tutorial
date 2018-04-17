@@ -15,8 +15,9 @@ rcoulomb                 = 0
 
 nstxout-compressed	 = 0
 
-freezegrps		 = H1 H2
-freezedim		 = N Y Y N Y Y
+freezegrps		 = H1 H2 H3 H4
+freezedim		 = N Y Y N Y Y N Y Y N Y Y
+
 
 pull                    = yes
 pull-nstxout		= 20

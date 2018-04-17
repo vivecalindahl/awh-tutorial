@@ -1,2 +1,3 @@
 63346  gmx mdrun -v -quiet -s ../topol.tpr  -tableb ../table_b0.xvg 
 63347  gmx awh -s ../topol.tpr -f ener.edr -more
+/plot_2d.py awh_t50.xvg --sub  --out pmf-2d.pdf

@@ -2,10 +2,10 @@
 ;	File 'mdout.mdp' was generated
 ;	By user: viveca (501)
 ;	On host: sanddollar.local
-;	At date: Tue Apr 17 14:21:25 2018
+;	At date: Tue Apr 17 16:05:04 2018
 ;
 ;	Created by:
-;	     :-) GROMACS - gmx grompp, 2018.2-dev-20180410-f2c9e7785-unknown (-:
+;	  :-) GROMACS - gmx grompp, 2018.2-dev-20180410-f2c9e7785-dirty-unknown (-:
 ;	
 ;	Executable:   /Users/viveca/programs/gromacs/2018/bin/gmx
 ;	Data prefix:  /Users/viveca/programs/gromacs/2018
@@ -417,8 +417,8 @@ dh_hist_spacing          = 0.1
 ; Non-equilibrium MD stuff
 acc-grps                 = 
 accelerate               = 
-freezegrps               = H1 H2
-freezedim                = N Y Y N Y Y
+freezegrps               = H1 H2 H3 H4
+freezedim                = N Y Y N Y Y N Y Y N Y Y
 cos-acceleration         = 0
 deform                   = 
 
