@@ -1,0 +1,2 @@
+mpirun-openmpi-mp -np 2 gmx_mpi mdrun -tableb ../../table_b0.xvg -multidir 0 1
+gmx awh -s 0/topol.tpr -f 0/ener.edr -more
