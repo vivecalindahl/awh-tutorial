@@ -1,0 +1,76 @@
+integrator               = md
+dt                       = 0.002
+nsteps                   = 100000000
+
+nstlog                   = 5000000
+nstenergy                = 50000
+nstxtcout                = 500000
+
+coulombtype              = pme
+rcoulomb                 = 1.0
+fourierspacing           = 0.121
+
+vdwtype                  = cut-off
+cut-off-scheme           = verlet
+vdw-modifier             = potential-shift
+rvdw                     = 1.0
+dispCorr                 = enerpres
+
+pcoupl                   = parrinello-rahman  
+pcoupl-type              = semiisotropic
+tau_p                    = 5.0 
+ref_p                    = 1.0 1.0
+compressibility          = 4.5e-5 4.5e-5 
+
+tcoupl                   = v-rescale 
+tc-grps                  = system
+tau_t                    = 0.5 
+ref_t                    = 300 
+
+gen-vel                  = yes
+gen-temp                 = 300
+gen-seed                 = -1
+
+constraints              = h-bonds
+periodic-molecules       = yes
+
+pull                     = yes
+pull-print-ref-value	 = yes
+pull-nstxout             = 5000
+pull-nstfout             = 0
+pull-ngroups             = 4
+pull-ncoords             = 2
+
+pull-group1-name         = base_N1orN3
+pull-group2-name         = partner_N1orN3
+pull-group3-name         = base_6ring
+pull-group4-name         = partner_6ring
+
+pull-coord1-groups       = 1 2
+pull-coord1-type         = external-potential
+pull-coord1-potential-provider = AWH
+pull-coord1-geometry     = distance
+
+pull-coord2-groups       = 3 4
+pull-coord2-type         = flat-bottom-high
+pull-coord2-start        = no
+pull-coord2-init         = 0.48
+pull-coord2-geometry     = distance
+pull-coord2-k            = 128000
+
+awh                      = yes
+awh-nbias                = 1
+awh-nstout 		 = 50000
+
+awh-share-multisim       = yes
+awh1-share-group	 = 1
+
+awh1-ndim                = 1
+awh1-error-init          = 5
+awh1-dim1-coord-index     = 1
+awh1-dim1-diffusion      = 5e-5 
+awh1-dim1-start          = 0.25
+awh1-dim1-end            = 0.60
+awh1-dim1-force-constant = 128000
+
+awh1-equilibrate-histogram = yes
