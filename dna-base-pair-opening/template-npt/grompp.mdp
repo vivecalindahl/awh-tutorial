@@ -1,0 +1,35 @@
+integrator               = md
+dt                       = 0.002
+nsteps                   = 25000000
+
+nstlog                   = 5000000
+nstenergy                = 50000
+nstxtcout                = 500000
+
+coulombtype              = pme
+rcoulomb                 = 1.0
+fourierspacing           = 0.121
+
+vdwtype                  = cut-off
+cut-off-scheme           = verlet
+vdw-modifier             = potential-shift
+rvdw                     = 1.0
+dispCorr                 = enerpres
+
+pcoupl                   = parrinello-rahman  
+pcoupl-type              = semiisotropic
+tau_p                    = 5.0 
+ref_p                    = 1.0 1.0
+compressibility          = 4.5e-5 4.5e-5 
+
+tcoupl                   = v-rescale 
+tc-grps                  = system
+tau_t                    = 0.5 
+ref_t                    = 300 
+
+gen-vel                  = yes
+gen-temp                 = 300
+gen-seed                 = -1
+
+constraints              = h-bonds
+periodic-molecules       = yes
