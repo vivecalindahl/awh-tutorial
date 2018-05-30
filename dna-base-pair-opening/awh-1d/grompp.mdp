@@ -27,33 +27,33 @@ tc-grps                  = system
 tau_t                    = 0.5 
 ref_t                    = 300 
 
-gen-vel                  = yes
+gen-vel                  = no
 gen-temp                 = 300
 gen-seed                 = -1
 
 constraints              = h-bonds
 periodic-molecules       = yes
 
-pull                     = yes                 # The reaction coordinate (RC) is defined using pull coordinates.
-pull-ngroups             = 2                   # The number of atom groups needed to define the pull coordinate.
-pull-ncoords             = 1                   # Number of pull coordinates.
-pull-nstxout             = 5000                # Step interval to output the coordinate values to the pullx.xvg file.
-pull-nstfout             = 0                   # Step interval to output the applied force, skip this output here.
+pull                     = yes                 ; The reaction coordinate (RC) is defined using pull coordinates.
+pull-ngroups             = 2                   ; The number of atom groups needed to define the pull coordinate.
+pull-ncoords             = 1                   ; Number of pull coordinates.
+pull-nstxout             = 5000                ; Step interval to output the coordinate values to the pullx.xvg file.
+pull-nstfout             = 0                   ; Step interval to output the applied force, skip this output here.
 					       
-pull-group1-name         = base_N1orN3         # Name of pull group 1 corresponding to an entry in an index file.
-pull-group2-name         = partner_N1orN3      # Same, but for group 2.
+pull-group1-name         = base_N1orN3         ; Name of pull group 1 corresponding to an entry in an index file.
+pull-group2-name         = partner_N1orN3      ; Same, but for group 2.
 					       
-pull-coord1-groups       = 1 2                 # Which groups define coordinate 1? Here, groups 1 and 2.
-pull-coord1-geometry     = distance            # How is the coordinate defined from these groups? Here by the center of mass distance.
-pull-coord1-type         = external-potential  # How should the bias be applied to the coordinate? Here by an external module.
-pull-coord1-potential-provider = AWH           # The external module is called AWH!
+pull-coord1-groups       = 1 2                 ; Which groups define coordinate 1? Here, groups 1 and 2.
+pull-coord1-geometry     = distance            ; How is the coordinate defined from these groups? Here by the center of mass distance.
+pull-coord1-type         = external-potential  ; How should the bias be applied to the coordinate? Here by an external module.
+pull-coord1-potential-provider = AWH           ; The external module is called AWH!
 
-awh                      = yes                 # AWH on.
-awh-nstout               = 50000               # Step interval for writing awh*.xvg files with PMF/histogram data.
-awh-nbias                = 1                   # One bias, could have multiple.
-awh1-ndim                = 1                   # Dimensionality of the RC, each dimension requires one pull coordinate.
-awh1-dim1-coord-index    = 1                   # Map RC dimension to pull coordinate index (here 1-->1)
-awh1-dim1-start          = 0.25                # Sampling interval min value (nm)
-awh1-dim1-end            = 0.60                # Sampling interval max value (nm)
-awh1-dim1-force-constant = 128000              # Force constant of the harmonic potential (kJ/(mol*nm^2))
-awh1-dim1-diffusion      = 5e-5                # Estimate of the diffusion (nm^2/ps)
+awh                      = yes                 ; AWH on.
+awh-nstout               = 50000               ; Step interval for writing awh*.xvg files with PMF/histogram data.
+awh-nbias                = 1                   ; One bias, could have multiple.
+awh1-ndim                = 1                   ; Dimensionality of the RC, each dimension requires one pull coordinate.
+awh1-dim1-coord-index    = 1                   ; Map RC dimension to pull coordinate index (here 1-->1)
+awh1-dim1-start          = 0.25                ; Sampling interval min value (nm)
+awh1-dim1-end            = 0.60                ; Sampling interval max value (nm)
+awh1-dim1-force-constant = 128000              ; Force constant of the harmonic potential (kJ/(mol*nm^2))
+awh1-dim1-diffusion      = 5e-5                ; Estimate of the diffusion (nm^2/ps)
